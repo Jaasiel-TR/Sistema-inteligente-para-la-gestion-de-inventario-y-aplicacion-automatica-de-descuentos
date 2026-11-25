@@ -1,13 +1,14 @@
 """
-Punto de venta.
+Gestión del inventario, descuentos y bitácora.
 
-Guarda el inventario y las ventas en una carpeta (por defecto ./punto_venta):
-  - inventario_actual.csv : existencias que se van descontando con cada venta
-  - ventas.csv            : historial de tickets (una fila por producto vendido)
+Guarda los datos en una carpeta (por defecto ./punto_venta):
+  - inventario_actual.csv : productos y existencias; se descuentan con cada venta
+  - descuentos.csv        : descuentos aplicados por producto (sugerido o manual)
+  - movimientos.csv       : bitácora de altas, bajas, cambios, entradas y descuentos
   - modelo.joblib         : modelo de clasificación entrenado con el inventario inicial
 
-Al cobrar, el sistema aplica el descuento recomendado vigente para cada producto,
-así que el precio de venta depende del inventario en ese momento.
+El precio de venta es precio_venta menos el descuento aplicado. Las recomendaciones
+no se aplican solas: hay que aplicarlas desde la sección Descuentos.
 """
 import os
 from datetime import datetime
@@ -18,13 +19,10 @@ import pandas as pd
 from . import clasificacion, datos, descuentos
 
 CARPETA_DEFAULT = "punto_venta"
-COLUMNAS_VENTAS = [
-    "fecha", "id_venta", "id_producto", "nombre", "cantidad",
-    "precio_lista", "precio_unitario", "descuento_pct", "total_linea",
-]
-
+LIMITE_DESCUENTO_MANUAL = 60.0  # porcentaje máximo que se puede aplicar a mano
 
 COLUMNAS_MOVIMIENTOS = ["fecha", "id_producto", "tipo", "detalle"]
+COLUMNAS_DESCUENTOS = ["id_producto", "descuento_pct", "origen", "fecha"]
 CAMPOS_EDITABLES = [
     "nombre", "categoria", "precio_compra", "precio_venta", "existencia_actual",
     "unidades_vendidas", "dias_periodo", "dias_desde_ultima_venta",
@@ -34,10 +32,14 @@ CAMPOS_EDITABLES = [
 def _rutas(carpeta):
     return {
         "inventario": os.path.join(carpeta, "inventario_actual.csv"),
-        "ventas": os.path.join(carpeta, "ventas.csv"),
         "modelo": os.path.join(carpeta, "modelo.joblib"),
         "movimientos": os.path.join(carpeta, "movimientos.csv"),
+        "aplicados": os.path.join(carpeta, "descuentos.csv"),
     }
+
+
+def _ahora():
+    return datetime.now().isoformat(timespec="seconds")
 
 
 def esta_inicializado(carpeta=CARPETA_DEFAULT):
@@ -46,109 +48,20 @@ def esta_inicializado(carpeta=CARPETA_DEFAULT):
 
 
 def inicializar(df, modelo, carpeta=CARPETA_DEFAULT):
-    """Carga un inventario nuevo. Reemplaza el inventario y borra el historial de ventas."""
+    """Carga un inventario nuevo. Reemplaza el inventario y borra la bitácora y los descuentos."""
     os.makedirs(carpeta, exist_ok=True)
     r = _rutas(carpeta)
     df.to_csv(r["inventario"], index=False)
     joblib.dump(modelo, r["modelo"])
-    pd.DataFrame(columns=COLUMNAS_VENTAS).to_csv(r["ventas"], index=False)
     pd.DataFrame(columns=COLUMNAS_MOVIMIENTOS).to_csv(r["movimientos"], index=False)
+    pd.DataFrame(columns=COLUMNAS_DESCUENTOS).to_csv(r["aplicados"], index=False)
 
+
+# ---------- Lectura ----------
 
 def cargar_inventario(carpeta=CARPETA_DEFAULT):
     return pd.read_csv(_rutas(carpeta)["inventario"], dtype={"id_producto": str})
 
-
-def cargar_ventas(carpeta=CARPETA_DEFAULT):
-    return pd.read_csv(
-        _rutas(carpeta)["ventas"],
-        dtype={"id_venta": str, "id_producto": str},
-    )
-
-
-def recomendaciones_actuales(carpeta, max_descuento, margen_minimo):
-    """Descuentos vigentes según el inventario actual (se recalculan con cada venta)."""
-    r = _rutas(carpeta)
-    inv = cargar_inventario(carpeta)
-    modelo = joblib.load(r["modelo"])
-    etiquetas = clasificacion.predecir(modelo, inv)
-    etiquetas[inv["existencia_actual"] == 0] = "Normal"  # sin existencia no hay nada que descontar
-    return descuentos.generar_recomendaciones(inv, etiquetas, max_descuento, margen_minimo)
-
-
-def registrar_venta(carrito, max_descuento, margen_minimo, carpeta=CARPETA_DEFAULT):
-    """
-    carrito: dict {id_producto: cantidad}.
-    Aplica los descuentos vigentes, descuenta existencias y guarda el ticket.
-    Devuelve (ticket_df, total). Lanza ValueError si el carrito no es válido.
-    """
-    carrito = {str(k): int(v) for k, v in carrito.items() if int(v) > 0}
-    if not carrito:
-        raise ValueError("El carrito está vacío.")
-
-    inv = cargar_inventario(carpeta)
-    inv_idx = inv.set_index("id_producto")
-    recs = recomendaciones_actuales(carpeta, max_descuento, margen_minimo).set_index("id_producto")
-
-    # Validar existencias antes de tocar nada
-    errores = []
-    for pid, cantidad in carrito.items():
-        if pid not in inv_idx.index:
-            errores.append(f"El producto {pid} no existe")
-            continue
-        disponible = int(inv_idx.loc[pid, "existencia_actual"])
-        if cantidad > disponible:
-            errores.append(f"{inv_idx.loc[pid, 'nombre']}: solo hay {disponible} en existencia")
-    if errores:
-        raise ValueError("; ".join(errores))
-
-    # Construir el ticket con los precios vigentes
-    ahora = datetime.now().isoformat(timespec="seconds")
-    id_venta = datetime.now().strftime("%Y%m%d%H%M%S%f")
-    lineas = []
-    for pid, cantidad in carrito.items():
-        precio_unitario = float(recs.loc[pid, "precio_sugerido"])
-        lineas.append({
-            "fecha": ahora,
-            "id_venta": id_venta,
-            "id_producto": pid,
-            "nombre": recs.loc[pid, "nombre"],
-            "cantidad": cantidad,
-            "precio_lista": float(inv_idx.loc[pid, "precio_venta"]),
-            "precio_unitario": precio_unitario,
-            "descuento_pct": float(recs.loc[pid, "descuento_pct"]),
-            "total_linea": round(precio_unitario * cantidad, 2),
-        })
-        inv_idx.loc[pid, "existencia_actual"] -= cantidad
-
-    ticket = pd.DataFrame(lineas, columns=COLUMNAS_VENTAS)
-    total = round(float(ticket["total_linea"].sum()), 2)
-
-    r = _rutas(carpeta)
-    inv_idx.reset_index()[inv.columns].to_csv(r["inventario"], index=False)
-    ticket.to_csv(r["ventas"], mode="a", header=False, index=False)
-    return ticket, total
-
-
-def resumen_del_dia(carpeta=CARPETA_DEFAULT):
-    """Totales de las ventas registradas hoy."""
-    vacio = {"tickets": 0, "ventas": 0.0, "descuentos": 0.0}
-    ventas = cargar_ventas(carpeta)
-    if ventas.empty:
-        return vacio
-    hoy = datetime.now().date().isoformat()
-    ventas = ventas[ventas["fecha"].str.startswith(hoy)]
-    if ventas.empty:
-        return vacio
-    ahorro = ((ventas["precio_lista"] - ventas["precio_unitario"]) * ventas["cantidad"]).sum()
-    return {
-        "tickets": int(ventas["id_venta"].nunique()),
-        "ventas": round(float(ventas["total_linea"].sum()), 2),
-        "descuentos": round(float(ahorro), 2),
-    }
-
-
-# ---------- Gestión de inventario ----------
 
 def cargar_movimientos(carpeta=CARPETA_DEFAULT):
     r = _rutas(carpeta)
@@ -157,17 +70,133 @@ def cargar_movimientos(carpeta=CARPETA_DEFAULT):
     return pd.read_csv(r["movimientos"], dtype={"id_producto": str})
 
 
+def cargar_aplicados(carpeta=CARPETA_DEFAULT):
+    r = _rutas(carpeta)
+    if not os.path.exists(r["aplicados"]):
+        return pd.DataFrame(columns=COLUMNAS_DESCUENTOS)
+    return pd.read_csv(r["aplicados"], dtype={"id_producto": str})
+
+
+def _guardar_aplicados(carpeta, aplicados):
+    aplicados.to_csv(_rutas(carpeta)["aplicados"], index=False)
+
+
 def registrar_movimiento(carpeta, id_producto, tipo, detalle):
-    """Agrega una línea a la bitácora de movimientos del inventario."""
+    """Agrega una línea a la bitácora de movimientos."""
     r = _rutas(carpeta)
     fila = pd.DataFrame([{
-        "fecha": datetime.now().isoformat(timespec="seconds"),
+        "fecha": _ahora(),
         "id_producto": id_producto,
         "tipo": tipo,
         "detalle": detalle,
     }])
     fila.to_csv(r["movimientos"], mode="a", header=not os.path.exists(r["movimientos"]), index=False)
 
+
+# ---------- Recomendaciones y precios ----------
+
+def recomendaciones_actuales(carpeta, max_descuento, margen_minimo):
+    """Descuentos sugeridos según el inventario actual."""
+    r = _rutas(carpeta)
+    inv = cargar_inventario(carpeta)
+    modelo = joblib.load(r["modelo"])
+    etiquetas = clasificacion.predecir(modelo, inv)
+    etiquetas[inv["existencia_actual"] == 0] = "Normal"
+    return descuentos.generar_recomendaciones(inv, etiquetas, max_descuento, margen_minimo)
+
+
+def _precio_final(precio_venta, pct):
+    return round(float(precio_venta) * (1 - float(pct) / 100), 2)
+
+
+def tabla_precios(carpeta=CARPETA_DEFAULT):
+    """Precio de cobro de cada producto: precio de lista menos el descuento aplicado."""
+    inv = cargar_inventario(carpeta)
+    aplicados = cargar_aplicados(carpeta).set_index("id_producto")
+    tabla = inv[[
+        "id_producto", "nombre", "categoria", "existencia_actual",
+        "precio_compra", "precio_venta",
+    ]].copy()
+    tabla["descuento_pct"] = tabla["id_producto"].map(aplicados["descuento_pct"]).fillna(0.0)
+    tabla["origen"] = tabla["id_producto"].map(aplicados["origen"]).fillna("")
+    tabla["precio_final"] = (tabla["precio_venta"] * (1 - tabla["descuento_pct"] / 100)).round(2)
+    return tabla
+
+
+def tabla_descuentos(carpeta, max_descuento, margen_minimo):
+    """Precios actuales junto con la sugerencia del sistema para cada producto."""
+    tabla = tabla_precios(carpeta)
+    recs = recomendaciones_actuales(carpeta, max_descuento, margen_minimo).set_index("id_producto")
+    tabla["etiqueta"] = tabla["id_producto"].map(recs["etiqueta"])
+    tabla["sugerido_pct"] = tabla["id_producto"].map(recs["descuento_pct"]).fillna(0.0)
+    tabla["motivo"] = tabla["id_producto"].map(recs["motivo"])
+    return tabla
+
+
+# ---------- Descuentos ----------
+
+def aplicar_sugerencias(carpeta, max_descuento, margen_minimo):
+    """Aplica el descuento sugerido a todos los productos candidatos. Devuelve cuántos fueron."""
+    recs = recomendaciones_actuales(carpeta, max_descuento, margen_minimo)
+    candidatos = recs[recs["descuento_pct"] > 0]
+    ids = candidatos["id_producto"].astype(str).tolist()
+
+    aplicados = cargar_aplicados(carpeta)
+    aplicados = aplicados[~aplicados["id_producto"].isin(ids)]
+    nuevos = pd.DataFrame({
+        "id_producto": ids,
+        "descuento_pct": candidatos["descuento_pct"].astype(float).round(2).tolist(),
+        "origen": "sugerido",
+        "fecha": _ahora(),
+    }, columns=COLUMNAS_DESCUENTOS)
+    _guardar_aplicados(carpeta, pd.concat([aplicados, nuevos], ignore_index=True))
+
+    if ids:
+        registrar_movimiento(carpeta, "*", "descuento", f"Sugerencias aplicadas a {len(ids)} productos")
+    return len(ids)
+
+
+def guardar_descuento(carpeta, id_producto, pct, sugerido_pct=None):
+    """
+    Fija el descuento de un producto. pct = 0 quita el descuento.
+    Devuelve el origen guardado: 'sugerido' o 'manual'. Lanza ValueError si no es válido.
+    """
+    pid = str(id_producto)
+    inv = cargar_inventario(carpeta)
+    fila = inv[inv["id_producto"] == pid]
+    if fila.empty:
+        raise ValueError(f"El producto {pid} no existe.")
+    pct = float(pct)
+    nombre = fila["nombre"].iloc[0]
+    if pct < 0 or pct > LIMITE_DESCUENTO_MANUAL:
+        raise ValueError(
+            f"{nombre}: el descuento debe estar entre 0 y {LIMITE_DESCUENTO_MANUAL:.0f}%."
+        )
+    precio_venta = float(fila["precio_venta"].iloc[0])
+    costo = float(fila["precio_compra"].iloc[0])
+    if pct > 0 and _precio_final(precio_venta, pct) < costo:
+        raise ValueError(
+            f"{nombre}: con {pct:.1f}% el precio quedaría en "
+            f"${_precio_final(precio_venta, pct):.2f}, por debajo del costo (${costo:.2f})."
+        )
+
+    antes = float(cargar_aplicados(carpeta).set_index("id_producto")["descuento_pct"].get(pid, 0.0))
+    origen = "sugerido" if sugerido_pct is not None and abs(pct - float(sugerido_pct)) < 0.05 else "manual"
+
+    aplicados = cargar_aplicados(carpeta)
+    aplicados = aplicados[aplicados["id_producto"] != pid]
+    if pct > 0:
+        aplicados = pd.concat([aplicados, pd.DataFrame([{
+            "id_producto": pid, "descuento_pct": round(pct, 2), "origen": origen, "fecha": _ahora(),
+        }])], ignore_index=True)
+    _guardar_aplicados(carpeta, aplicados)
+
+    if round(antes, 2) != round(pct, 2):
+        registrar_movimiento(carpeta, pid, "descuento", f"{antes:.1f}% → {pct:.1f}% ({origen})")
+    return origen
+
+
+# ---------- Gestión de inventario ----------
 
 def _iguales(a, b):
     if pd.isna(a) and pd.isna(b):
@@ -177,9 +206,10 @@ def _iguales(a, b):
 
 def guardar_cambios(nuevo, carpeta=CARPETA_DEFAULT):
     """
-    Reemplaza el inventario con la tabla editada. Valida los datos antes de guardar
-    y registra en la bitácora cada alta, baja y cambio de campo.
-    Devuelve el número de movimientos registrados. Lanza ValueError si los datos no son válidos.
+    Reemplaza el inventario con la tabla editada. Valida antes de guardar y
+    registra en la bitácora cada alta, baja y cambio. Quita los descuentos de
+    productos eliminados o que quedarían por debajo del costo.
+    Devuelve el número de movimientos registrados.
     """
     actual = cargar_inventario(carpeta)
     nuevo = nuevo.copy()
@@ -201,11 +231,9 @@ def guardar_cambios(nuevo, carpeta=CARPETA_DEFAULT):
     for p in limpio.index.difference(act.index):
         registrar_movimiento(carpeta, p, "alta", f"Nuevo producto: {limpio.loc[p, 'nombre']}")
         movimientos += 1
-
     for p in act.index.difference(limpio.index):
         registrar_movimiento(carpeta, p, "baja", f"Producto eliminado: {act.loc[p, 'nombre']}")
         movimientos += 1
-
     for p in limpio.index.intersection(act.index):
         for campo in CAMPOS_EDITABLES:
             antes, despues = act.loc[p, campo], limpio.loc[p, campo]
@@ -221,6 +249,22 @@ def guardar_cambios(nuevo, carpeta=CARPETA_DEFAULT):
 
     resultado = limpio.reset_index().reindex(columns=actual.columns)
     resultado.to_csv(_rutas(carpeta)["inventario"], index=False)
+
+    # Revisar descuentos vigentes frente a los nuevos datos
+    validos = []
+    for _, f in cargar_aplicados(carpeta).iterrows():
+        pid = f["id_producto"]
+        if pid not in limpio.index:
+            motivo = "producto eliminado"
+        elif _precio_final(limpio.loc[pid, "precio_venta"], f["descuento_pct"]) < float(limpio.loc[pid, "precio_compra"]):
+            motivo = "quedaría por debajo del costo"
+        else:
+            validos.append(f.to_dict())
+            continue
+        registrar_movimiento(carpeta, pid, "descuento", f"Descuento de {f['descuento_pct']}% quitado: {motivo}")
+        movimientos += 1
+    _guardar_aplicados(carpeta, pd.DataFrame(validos, columns=COLUMNAS_DESCUENTOS))
+
     return movimientos
 
 

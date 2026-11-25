@@ -1,601 +1,293 @@
-id_producto,nombre,categoria,precio_compra,precio_venta,existencia_actual,unidades_vendidas,dias_periodo,dias_desde_ultima_venta,etiqueta
-P0001,Producto 1,Bebidas,467.76,727.78,186,47,90,79,Exceso de inventario
-P0002,Producto 2,Electrónica,271.74,488.38,143,36,90,81,Exceso de inventario
-P0003,Producto 3,Bebidas,517.28,992.05,1,187,90,34,Baja rotación
-P0004,Producto 4,Bebidas,422.96,745.51,141,156,90,67,Baja rotación
-P0005,Producto 5,Limpieza,70.09,137.99,201,1,90,68,Exceso de inventario
-P0006,Producto 6,Papelería,585.74,1062.94,207,1,90,61,Exceso de inventario
-P0007,Producto 7,Ropa,460.27,868.43,95,50,90,16,Exceso de inventario
-P0008,Producto 8,Bebidas,474.85,592.13,59,52,90,4,Normal
-P0009,Producto 9,Electrónica,89.95,159.44,77,13,90,31,Exceso de inventario
-P0010,Producto 10,Papelería,278.48,424.42,74,6,90,11,Exceso de inventario
-P0011,Producto 11,Papelería,231.92,375.74,86,177,90,26,Normal
-P0012,Producto 12,Ropa,557.16,950.51,75,189,90,57,Normal
-P0013,Producto 13,Abarrotes,391.66,773.27,114,46,90,52,Exceso de inventario
-P0014,Producto 14,Bebidas,496.32,986.13,10,13,90,18,Baja rotación
-P0015,Producto 15,Bebidas,274.4,382.79,68,13,90,1,Exceso de inventario
-P0016,Producto 16,Abarrotes,147.93,262.38,78,51,90,20,Exceso de inventario
-P0017,Producto 17,Bebidas,339.43,606.73,38,10,90,40,Exceso de inventario
-P0018,Producto 18,Bebidas,52.33,75.59,219,53,90,70,Exceso de inventario
-P0019,Producto 19,Electrónica,499.16,626.59,168,39,90,32,Exceso de inventario
-P0020,Producto 20,Limpieza,384.52,455.58,227,1,90,25,Exceso de inventario
-P0021,Producto 21,Limpieza,458.48,830.19,140,1,90,49,Exceso de inventario
-P0022,Producto 22,Bebidas,222.4,348.33,27,5,90,6,Exceso de inventario
-P0023,Producto 23,Abarrotes,582.86,1158.56,226,196,90,20,Exceso de inventario
-P0024,Producto 24,Papelería,537.48,830.53,114,47,90,3,Exceso de inventario
-P0025,Producto 25,Electrónica,470.35,931.87,171,1,90,47,Exceso de inventario
-P0026,Producto 26,Bebidas,128.86,193.27,95,201,90,39,Baja rotación
-P0027,Producto 27,Ropa,288.03,525.55,123,37,90,52,Exceso de inventario
-P0028,Producto 28,Ropa,40.63,49.65,122,48,90,55,Normal
-P0029,Producto 29,Papelería,105.26,170.75,71,365,90,35,Baja rotación
-P0030,Producto 30,Abarrotes,414.58,759.41,138,1,90,78,Exceso de inventario
-P0031,Producto 31,Electrónica,450.69,872.53,183,6,90,82,Exceso de inventario
-P0032,Producto 32,Papelería,580.99,1074.36,5,44,90,9,Normal
-P0033,Producto 33,Ropa,205.61,242.91,32,4,90,82,Exceso de inventario
-P0034,Producto 34,Bebidas,231.72,339.89,210,44,90,17,Exceso de inventario
-P0035,Producto 35,Papelería,289.69,345.13,142,5,90,22,Exceso de inventario
-P0036,Producto 36,Limpieza,125.84,156.41,243,2,90,47,Exceso de inventario
-P0037,Producto 37,Limpieza,91.0,156.88,151,7,90,2,Exceso de inventario
-P0038,Producto 38,Electrónica,293.29,515.1,163,10,90,32,Exceso de inventario
-P0039,Producto 39,Ropa,147.74,267.06,224,3,90,17,Baja rotación
-P0040,Producto 40,Abarrotes,406.84,767.15,165,3,90,43,Exceso de inventario
-P0041,Producto 41,Electrónica,270.73,481.5,82,166,90,73,Baja rotación
-P0042,Producto 42,Ropa,502.12,919.25,131,13,90,83,Exceso de inventario
-P0043,Producto 43,Electrónica,424.66,506.03,58,7,90,19,Exceso de inventario
-P0044,Producto 44,Bebidas,197.73,266.81,83,4,90,49,Exceso de inventario
-P0045,Producto 45,Abarrotes,501.87,842.45,170,7,90,42,Exceso de inventario
-P0046,Producto 46,Electrónica,485.79,913.0,37,6,90,37,Exceso de inventario
-P0047,Producto 47,Ropa,241.67,278.84,167,47,90,56,Exceso de inventario
-P0048,Producto 48,Electrónica,183.67,291.56,146,4,90,89,Exceso de inventario
-P0049,Producto 49,Papelería,414.26,714.89,77,176,90,36,Baja rotación
-P0050,Producto 50,Electrónica,96.76,113.71,11,353,90,5,Normal
-P0051,Producto 51,Electrónica,131.95,196.76,176,1,90,82,Exceso de inventario
-P0052,Producto 52,Abarrotes,19.31,36.91,206,2,90,83,Exceso de inventario
-P0053,Producto 53,Electrónica,475.35,818.02,182,0,90,90,Normal
-P0054,Producto 54,Bebidas,403.94,546.13,105,51,90,45,Exceso de inventario
-P0055,Producto 55,Ropa,427.52,801.54,163,4,90,77,Exceso de inventario
-P0056,Producto 56,Abarrotes,471.73,682.04,103,178,90,45,Baja rotación
-P0057,Producto 57,Papelería,283.47,531.6,89,164,90,43,Baja rotación
-P0058,Producto 58,Bebidas,347.71,488.22,81,178,90,82,Baja rotación
-P0059,Producto 59,Limpieza,96.78,159.86,52,41,90,74,Exceso de inventario
-P0060,Producto 60,Abarrotes,82.0,121.97,242,335,90,45,Baja rotación
-P0061,Producto 61,Bebidas,406.02,561.77,166,2,90,14,Exceso de inventario
-P0062,Producto 62,Papelería,290.59,553.16,43,11,90,39,Exceso de inventario
-P0063,Producto 63,Bebidas,345.66,452.63,216,6,90,60,Exceso de inventario
-P0064,Producto 64,Electrónica,462.52,565.24,37,370,90,24,Normal
-P0065,Producto 65,Papelería,386.31,556.53,148,48,90,48,Exceso de inventario
-P0066,Producto 66,Electrónica,338.84,596.36,41,174,90,59,Normal
-P0067,Producto 67,Abarrotes,342.14,628.28,90,2,90,7,Exceso de inventario
-P0068,Producto 68,Limpieza,192.81,385.41,164,383,90,51,Baja rotación
-P0069,Producto 69,Limpieza,33.03,46.31,249,39,90,66,Exceso de inventario
-P0070,Producto 70,Bebidas,270.48,404.84,247,42,90,19,Exceso de inventario
-P0071,Producto 71,Bebidas,140.53,177.95,223,360,90,49,Baja rotación
-P0072,Producto 72,Electrónica,253.99,416.2,58,12,90,63,Exceso de inventario
-P0073,Producto 73,Limpieza,514.24,1027.42,23,5,90,3,Exceso de inventario
-P0074,Producto 74,Bebidas,151.85,265.09,226,35,90,57,Exceso de inventario
-P0075,Producto 75,Limpieza,49.11,81.32,230,1,90,23,Exceso de inventario
-P0076,Producto 76,Limpieza,179.61,266.45,69,6,90,35,Exceso de inventario
-P0077,Producto 77,Bebidas,186.75,360.05,4,0,90,90,Exceso de inventario
-P0078,Producto 78,Limpieza,402.22,632.44,161,1,90,0,Exceso de inventario
-P0079,Producto 79,Papelería,340.86,430.92,19,180,90,1,Normal
-P0080,Producto 80,Electrónica,473.58,691.7,10,41,90,40,Baja rotación
-P0081,Producto 81,Electrónica,403.62,487.21,234,13,90,85,Exceso de inventario
-P0082,Producto 82,Papelería,252.74,334.04,123,8,90,0,Exceso de inventario
-P0083,Producto 83,Electrónica,491.2,572.26,28,10,90,70,Baja rotación
-P0084,Producto 84,Bebidas,112.68,173.0,163,45,90,6,Exceso de inventario
-P0085,Producto 85,Limpieza,28.29,47.79,92,352,90,44,Baja rotación
-P0086,Producto 86,Limpieza,67.68,97.58,134,355,90,38,Baja rotación
-P0087,Producto 87,Limpieza,437.58,659.58,224,12,90,42,Exceso de inventario
-P0088,Producto 88,Abarrotes,285.2,560.51,59,7,90,7,Exceso de inventario
-P0089,Producto 89,Abarrotes,109.34,195.63,161,48,90,67,Exceso de inventario
-P0090,Producto 90,Limpieza,308.11,495.97,207,58,90,24,Baja rotación
-P0091,Producto 91,Papelería,104.1,144.89,105,38,90,69,Exceso de inventario
-P0092,Producto 92,Ropa,422.35,807.72,242,47,90,58,Exceso de inventario
-P0093,Producto 93,Papelería,276.0,372.55,112,44,90,49,Exceso de inventario
-P0094,Producto 94,Bebidas,237.9,339.37,114,10,90,27,Exceso de inventario
-P0095,Producto 95,Limpieza,191.38,367.97,221,8,90,58,Exceso de inventario
-P0096,Producto 96,Electrónica,383.72,613.99,158,10,90,89,Exceso de inventario
-P0097,Producto 97,Limpieza,226.66,403.67,217,1,90,83,Exceso de inventario
-P0098,Producto 98,Limpieza,66.28,109.5,197,1,90,82,Exceso de inventario
-P0099,Producto 99,Limpieza,84.03,143.31,178,175,90,19,Exceso de inventario
-P0100,Producto 100,Abarrotes,577.71,811.38,60,12,90,52,Exceso de inventario
-P0101,Producto 101,Papelería,546.52,740.63,99,12,90,35,Exceso de inventario
-P0102,Producto 102,Papelería,424.33,604.3,216,50,90,87,Baja rotación
-P0103,Producto 103,Abarrotes,170.53,218.64,154,197,90,85,Baja rotación
-P0104,Producto 104,Limpieza,581.97,1101.77,70,9,90,78,Exceso de inventario
-P0105,Producto 105,Electrónica,470.57,654.45,81,199,90,14,Normal
-P0106,Producto 106,Ropa,434.38,706.85,193,342,90,28,Normal
-P0107,Producto 107,Papelería,277.88,506.62,44,47,90,64,Baja rotación
-P0108,Producto 108,Limpieza,174.26,316.5,28,41,90,67,Baja rotación
-P0109,Producto 109,Ropa,71.39,108.7,191,1,90,31,Exceso de inventario
-P0110,Producto 110,Papelería,543.02,844.3,72,402,90,12,Normal
-P0111,Producto 111,Ropa,281.63,561.99,191,10,90,12,Exceso de inventario
-P0112,Producto 112,Bebidas,133.38,229.87,133,340,90,61,Baja rotación
-P0113,Producto 113,Ropa,193.98,357.4,249,41,90,40,Exceso de inventario
-P0114,Producto 114,Limpieza,353.84,678.37,131,3,90,44,Exceso de inventario
-P0115,Producto 115,Abarrotes,118.41,215.44,216,0,90,90,Exceso de inventario
-P0116,Producto 116,Ropa,516.12,674.78,212,43,90,1,Exceso de inventario
-P0117,Producto 117,Papelería,458.73,746.74,52,39,90,67,Baja rotación
-P0118,Producto 118,Limpieza,435.89,539.03,249,3,90,24,Exceso de inventario
-P0119,Producto 119,Limpieza,267.77,456.54,186,194,90,83,Baja rotación
-P0120,Producto 120,Limpieza,381.98,749.46,26,177,90,85,Baja rotación
-P0121,Producto 121,Abarrotes,356.7,565.66,1,54,90,45,Baja rotación
-P0122,Producto 122,Papelería,395.16,599.86,67,46,90,28,Exceso de inventario
-P0123,Producto 123,Abarrotes,64.4,76.02,4,1,90,20,Exceso de inventario
-P0124,Producto 124,Electrónica,258.25,507.67,89,189,90,16,Normal
-P0125,Producto 125,Abarrotes,39.34,48.69,249,5,90,89,Exceso de inventario
-P0126,Producto 126,Ropa,303.98,360.19,119,169,90,16,Exceso de inventario
-P0127,Producto 127,Papelería,207.97,282.66,5,11,90,40,Baja rotación
-P0128,Producto 128,Electrónica,99.55,120.03,123,40,90,43,Exceso de inventario
-P0129,Producto 129,Electrónica,75.49,116.02,54,7,90,61,Exceso de inventario
-P0130,Producto 130,Ropa,358.77,569.97,214,2,90,75,Exceso de inventario
-P0131,Producto 131,Papelería,114.8,162.52,22,188,90,50,Exceso de inventario
-P0132,Producto 132,Papelería,556.2,663.72,192,39,90,68,Exceso de inventario
-P0133,Producto 133,Bebidas,354.92,441.83,111,33,90,51,Exceso de inventario
-P0134,Producto 134,Electrónica,217.92,321.83,4,375,90,39,Baja rotación
-P0135,Producto 135,Ropa,360.69,433.35,168,341,90,14,Normal
-P0136,Producto 136,Bebidas,28.34,49.41,113,182,90,18,Normal
-P0137,Producto 137,Ropa,575.76,763.44,192,4,90,38,Exceso de inventario
-P0138,Producto 138,Abarrotes,297.15,418.02,154,46,90,4,Exceso de inventario
-P0139,Producto 139,Papelería,472.9,702.26,196,173,90,28,Exceso de inventario
-P0140,Producto 140,Electrónica,63.4,95.36,115,8,90,41,Exceso de inventario
-P0141,Producto 141,Ropa,299.7,345.08,1,1,90,42,Baja rotación
-P0142,Producto 142,Ropa,302.06,376.14,32,167,90,73,Baja rotación
-P0143,Producto 143,Bebidas,563.63,1061.51,114,35,90,87,Exceso de inventario
-P0144,Producto 144,Limpieza,349.46,402.25,99,50,90,65,Exceso de inventario
-P0145,Producto 145,Papelería,291.99,461.91,198,371,90,7,Normal
-P0146,Producto 146,Abarrotes,171.18,268.08,102,50,90,36,Exceso de inventario
-P0147,Producto 147,Ropa,208.97,299.48,215,13,90,65,Baja rotación
-P0148,Producto 148,Bebidas,319.59,484.7,46,12,90,53,Baja rotación
-P0149,Producto 149,Electrónica,271.76,492.84,96,11,90,41,Exceso de inventario
-P0150,Producto 150,Electrónica,27.64,51.55,189,3,90,39,Exceso de inventario
-P0151,Producto 151,Ropa,498.38,683.43,31,175,90,36,Baja rotación
-P0152,Producto 152,Papelería,539.25,767.96,80,163,90,52,Baja rotación
-P0153,Producto 153,Limpieza,97.05,131.61,187,10,90,16,Exceso de inventario
-P0154,Producto 154,Bebidas,339.11,528.29,147,11,90,46,Exceso de inventario
-P0155,Producto 155,Limpieza,78.52,135.9,194,195,90,18,Normal
-P0156,Producto 156,Electrónica,408.26,548.71,128,0,90,90,Exceso de inventario
-P0157,Producto 157,Ropa,179.52,256.92,214,46,90,77,Exceso de inventario
-P0158,Producto 158,Ropa,400.76,777.81,219,44,90,45,Exceso de inventario
-P0159,Producto 159,Limpieza,440.29,524.51,243,36,90,34,Exceso de inventario
-P0160,Producto 160,Papelería,464.66,716.35,30,2,90,84,Exceso de inventario
-P0161,Producto 161,Abarrotes,78.03,136.93,147,39,90,59,Exceso de inventario
-P0162,Producto 162,Abarrotes,550.87,703.95,28,12,90,38,Exceso de inventario
-P0163,Producto 163,Abarrotes,149.68,178.16,57,49,90,2,Exceso de inventario
-P0164,Producto 164,Papelería,36.89,46.76,75,4,90,1,Exceso de inventario
-P0165,Producto 165,Bebidas,339.59,655.75,161,45,90,19,Exceso de inventario
-P0166,Producto 166,Electrónica,231.99,268.61,107,44,90,21,Exceso de inventario
-P0167,Producto 167,Ropa,500.43,655.6,216,11,90,64,Exceso de inventario
-P0168,Producto 168,Ropa,487.83,573.98,74,1,90,45,Exceso de inventario
-P0169,Producto 169,Papelería,200.53,249.47,154,1,90,89,Exceso de inventario
-P0170,Producto 170,Abarrotes,572.45,960.07,190,7,90,48,Exceso de inventario
-P0171,Producto 171,Limpieza,185.19,251.01,245,0,90,90,Exceso de inventario
-P0172,Producto 172,Electrónica,316.31,516.8,61,375,90,49,Baja rotación
-P0173,Producto 173,Ropa,164.74,272.1,183,8,90,32,Exceso de inventario
-P0174,Producto 174,Electrónica,562.59,1053.18,21,167,90,64,Baja rotación
-P0175,Producto 175,Electrónica,111.3,128.44,135,357,90,40,Baja rotación
-P0176,Producto 176,Bebidas,41.27,77.4,103,1,90,24,Exceso de inventario
-P0177,Producto 177,Abarrotes,269.53,451.8,239,43,90,42,Exceso de inventario
-P0178,Producto 178,Limpieza,595.54,767.25,193,200,90,59,Baja rotación
-P0179,Producto 179,Bebidas,536.63,969.69,231,36,90,33,Exceso de inventario
-P0180,Producto 180,Electrónica,452.94,850.24,212,9,90,63,Exceso de inventario
-P0181,Producto 181,Ropa,536.11,732.39,102,11,90,88,Exceso de inventario
-P0182,Producto 182,Electrónica,537.67,1038.23,183,5,90,37,Exceso de inventario
-P0183,Producto 183,Electrónica,318.53,489.35,7,58,90,26,Normal
-P0184,Producto 184,Abarrotes,199.82,332.28,139,356,90,36,Baja rotación
-P0185,Producto 185,Electrónica,466.63,927.17,11,351,90,75,Baja rotación
-P0186,Producto 186,Limpieza,402.07,585.94,181,1,90,16,Exceso de inventario
-P0187,Producto 187,Abarrotes,233.59,430.08,241,180,90,87,Exceso de inventario
-P0188,Producto 188,Bebidas,70.26,99.81,170,13,90,37,Exceso de inventario
-P0189,Producto 189,Ropa,451.87,826.62,209,378,90,75,Baja rotación
-P0190,Producto 190,Papelería,168.54,279.88,58,5,90,70,Exceso de inventario
-P0191,Producto 191,Electrónica,563.04,751.04,248,394,90,70,Baja rotación
-P0192,Producto 192,Papelería,155.97,234.25,137,182,90,81,Baja rotación
-P0193,Producto 193,Bebidas,86.81,123.27,168,2,90,16,Exceso de inventario
-P0194,Producto 194,Bebidas,501.2,609.66,192,1,90,53,Exceso de inventario
-P0195,Producto 195,Papelería,104.67,123.02,159,180,90,8,Normal
-P0196,Producto 196,Bebidas,119.87,173.15,79,1,90,26,Exceso de inventario
-P0197,Producto 197,Electrónica,365.64,426.4,152,46,90,3,Exceso de inventario
-P0198,Producto 198,Bebidas,526.62,679.69,163,366,90,61,Baja rotación
-P0199,Producto 199,Bebidas,129.91,229.47,214,43,90,54,Exceso de inventario
-P0200,Producto 200,Limpieza,196.54,344.31,120,12,90,66,Exceso de inventario
-P0201,Producto 201,Limpieza,469.78,835.17,125,10,90,15,Exceso de inventario
-P0202,Producto 202,Papelería,583.52,828.35,125,3,90,29,Exceso de inventario
-P0203,Producto 203,Papelería,307.93,587.07,28,354,90,60,Baja rotación
-P0204,Producto 204,Electrónica,99.18,164.12,22,9,90,74,Exceso de inventario
-P0205,Producto 205,Electrónica,23.15,29.1,5,2,90,79,Exceso de inventario
-P0206,Producto 206,Abarrotes,149.35,190.0,166,7,90,6,Normal
-P0207,Producto 207,Bebidas,92.12,160.21,104,374,90,36,Baja rotación
-P0208,Producto 208,Abarrotes,411.43,533.63,216,0,90,90,Exceso de inventario
-P0209,Producto 209,Papelería,86.27,136.41,175,176,90,73,Baja rotación
-P0210,Producto 210,Bebidas,311.2,620.22,35,182,90,11,Normal
-P0211,Producto 211,Limpieza,421.14,485.75,25,171,90,73,Baja rotación
-P0212,Producto 212,Papelería,354.95,413.19,91,340,90,14,Normal
-P0213,Producto 213,Ropa,131.87,262.96,230,188,90,1,Exceso de inventario
-P0214,Producto 214,Electrónica,485.41,799.44,12,330,90,79,Baja rotación
-P0215,Producto 215,Abarrotes,433.51,545.3,46,1,90,39,Exceso de inventario
-P0216,Producto 216,Electrónica,447.31,855.57,7,174,90,38,Baja rotación
-P0217,Producto 217,Electrónica,91.67,174.02,103,39,90,58,Exceso de inventario
-P0218,Producto 218,Bebidas,87.4,140.34,247,45,90,24,Baja rotación
-P0219,Producto 219,Ropa,557.62,935.98,170,168,90,62,Exceso de inventario
-P0220,Producto 220,Papelería,247.58,342.21,123,381,90,38,Baja rotación
-P0221,Producto 221,Bebidas,191.05,227.91,36,198,90,24,Normal
-P0222,Producto 222,Bebidas,300.82,497.97,88,54,90,35,Exceso de inventario
-P0223,Producto 223,Bebidas,402.78,564.11,131,48,90,0,Exceso de inventario
-P0224,Producto 224,Papelería,574.04,983.95,68,10,90,27,Exceso de inventario
-P0225,Producto 225,Abarrotes,182.57,339.73,176,8,90,53,Exceso de inventario
-P0226,Producto 226,Papelería,556.01,647.99,245,9,90,12,Exceso de inventario
-P0227,Producto 227,Ropa,29.54,48.93,51,1,90,10,Exceso de inventario
-P0228,Producto 228,Limpieza,339.79,457.56,63,5,90,59,Exceso de inventario
-P0229,Producto 229,Electrónica,385.88,730.4,31,187,90,38,Baja rotación
-P0230,Producto 230,Papelería,76.95,105.08,181,8,90,12,Exceso de inventario
-P0231,Producto 231,Ropa,97.1,162.07,115,339,90,67,Baja rotación
-P0232,Producto 232,Bebidas,260.18,421.62,70,54,90,69,Exceso de inventario
-P0233,Producto 233,Abarrotes,580.25,862.68,54,0,90,90,Exceso de inventario
-P0234,Producto 234,Electrónica,363.68,627.7,17,0,90,90,Exceso de inventario
-P0235,Producto 235,Abarrotes,560.82,990.92,119,12,90,33,Exceso de inventario
-P0236,Producto 236,Abarrotes,485.55,792.37,170,379,90,65,Baja rotación
-P0237,Producto 237,Papelería,288.42,517.62,58,9,90,6,Exceso de inventario
-P0238,Producto 238,Limpieza,474.09,941.5,0,51,90,72,Exceso de inventario
-P0239,Producto 239,Electrónica,25.43,38.31,118,357,90,28,Normal
-P0240,Producto 240,Bebidas,78.85,125.17,168,343,90,11,Normal
-P0241,Producto 241,Abarrotes,500.22,580.56,86,10,90,77,Exceso de inventario
-P0242,Producto 242,Abarrotes,481.14,878.86,62,2,90,7,Exceso de inventario
-P0243,Producto 243,Limpieza,151.09,240.56,38,2,90,11,Exceso de inventario
-P0244,Producto 244,Abarrotes,325.5,487.2,186,0,90,90,Exceso de inventario
-P0245,Producto 245,Limpieza,369.52,454.5,215,1,90,46,Exceso de inventario
-P0246,Producto 246,Bebidas,522.63,996.24,192,43,90,41,Exceso de inventario
-P0247,Producto 247,Electrónica,367.82,546.49,129,395,90,61,Baja rotación
-P0248,Producto 248,Electrónica,256.35,443.54,181,47,90,56,Exceso de inventario
-P0249,Producto 249,Bebidas,233.9,298.68,99,36,90,55,Exceso de inventario
-P0250,Producto 250,Limpieza,264.14,519.65,6,3,90,2,Exceso de inventario
-P0251,Producto 251,Abarrotes,396.38,515.96,91,165,90,49,Baja rotación
-P0252,Producto 252,Bebidas,522.48,689.47,175,46,90,25,Exceso de inventario
-P0253,Producto 253,Papelería,280.53,527.43,161,182,90,72,Baja rotación
-P0254,Producto 254,Papelería,159.99,308.09,247,332,90,45,Baja rotación
-P0255,Producto 255,Limpieza,153.45,204.14,249,10,90,11,Exceso de inventario
-P0256,Producto 256,Papelería,451.42,699.4,60,1,90,79,Exceso de inventario
-P0257,Producto 257,Electrónica,492.69,873.77,2,11,90,25,Baja rotación
-P0258,Producto 258,Abarrotes,76.59,145.26,68,6,90,24,Exceso de inventario
-P0259,Producto 259,Papelería,53.94,79.41,219,338,90,84,Baja rotación
-P0260,Producto 260,Limpieza,362.74,576.56,203,11,90,69,Exceso de inventario
-P0261,Producto 261,Electrónica,100.51,178.95,24,173,90,77,Baja rotación
-P0262,Producto 262,Electrónica,497.43,881.18,40,40,90,59,Baja rotación
-P0263,Producto 263,Bebidas,196.55,356.84,140,3,90,81,Exceso de inventario
-P0264,Producto 264,Ropa,99.17,162.09,165,11,90,10,Exceso de inventario
-P0265,Producto 265,Electrónica,553.77,686.08,245,37,90,53,Exceso de inventario
-P0266,Producto 266,Limpieza,111.84,214.55,188,40,90,26,Exceso de inventario
-P0267,Producto 267,Bebidas,181.56,342.37,52,9,90,35,Exceso de inventario
-P0268,Producto 268,Ropa,104.86,191.72,9,12,90,21,Normal
-P0269,Producto 269,Bebidas,82.56,101.95,158,184,90,18,Normal
-P0270,Producto 270,Abarrotes,27.37,36.23,138,1,90,39,Exceso de inventario
-P0271,Producto 271,Papelería,47.41,84.49,230,363,90,82,Baja rotación
-P0272,Producto 272,Bebidas,117.17,137.05,143,3,90,57,Exceso de inventario
-P0273,Producto 273,Electrónica,46.23,91.64,125,2,90,31,Baja rotación
-P0274,Producto 274,Ropa,360.82,530.61,75,48,90,39,Exceso de inventario
-P0275,Producto 275,Papelería,413.22,727.85,21,52,90,47,Baja rotación
-P0276,Producto 276,Electrónica,245.27,467.1,219,40,90,22,Exceso de inventario
-P0277,Producto 277,Ropa,201.02,298.6,206,6,90,46,Normal
-P0278,Producto 278,Papelería,310.15,440.8,40,387,90,62,Baja rotación
-P0279,Producto 279,Papelería,526.88,878.54,175,49,90,21,Exceso de inventario
-P0280,Producto 280,Abarrotes,512.91,843.14,91,34,90,52,Exceso de inventario
-P0281,Producto 281,Ropa,40.43,60.55,109,9,90,63,Exceso de inventario
-P0282,Producto 282,Bebidas,121.18,201.34,212,2,90,46,Exceso de inventario
-P0283,Producto 283,Papelería,153.5,298.57,210,40,90,26,Exceso de inventario
-P0284,Producto 284,Abarrotes,160.89,248.98,47,6,90,49,Exceso de inventario
-P0285,Producto 285,Bebidas,349.17,459.94,76,57,90,71,Exceso de inventario
-P0286,Producto 286,Bebidas,258.51,380.17,205,3,90,19,Normal
-P0287,Producto 287,Electrónica,43.81,65.06,229,368,90,51,Baja rotación
-P0288,Producto 288,Abarrotes,233.56,294.62,19,40,90,61,Baja rotación
-P0289,Producto 289,Abarrotes,321.4,414.1,208,159,90,28,Exceso de inventario
-P0290,Producto 290,Electrónica,74.48,128.99,122,51,90,34,Exceso de inventario
-P0291,Producto 291,Papelería,502.57,722.98,147,2,90,79,Normal
-P0292,Producto 292,Electrónica,45.4,89.06,18,168,90,32,Baja rotación
-P0293,Producto 293,Limpieza,556.03,754.56,170,47,90,53,Exceso de inventario
-P0294,Producto 294,Electrónica,72.98,90.06,169,169,90,13,Normal
-P0295,Producto 295,Electrónica,508.49,910.44,165,6,90,83,Baja rotación
-P0296,Producto 296,Limpieza,543.05,1031.19,197,56,90,53,Exceso de inventario
-P0297,Producto 297,Electrónica,588.05,815.27,236,184,90,68,Exceso de inventario
-P0298,Producto 298,Abarrotes,484.19,639.99,212,40,90,54,Exceso de inventario
-P0299,Producto 299,Bebidas,470.99,616.01,186,14,90,31,Exceso de inventario
-P0300,Producto 300,Ropa,390.85,622.9,245,34,90,30,Exceso de inventario
-P0301,Producto 301,Limpieza,470.71,728.73,168,40,90,63,Exceso de inventario
-P0302,Producto 302,Abarrotes,93.71,128.43,168,404,90,77,Baja rotación
-P0303,Producto 303,Abarrotes,328.6,390.51,135,13,90,11,Exceso de inventario
-P0304,Producto 304,Papelería,315.82,492.45,192,7,90,76,Exceso de inventario
-P0305,Producto 305,Bebidas,516.68,1015.5,17,167,90,74,Baja rotación
-P0306,Producto 306,Abarrotes,285.74,487.08,126,46,90,9,Exceso de inventario
-P0307,Producto 307,Ropa,240.28,377.52,106,187,90,9,Normal
-P0308,Producto 308,Electrónica,389.14,484.12,228,43,90,62,Exceso de inventario
-P0309,Producto 309,Limpieza,170.88,233.18,18,5,90,75,Exceso de inventario
-P0310,Producto 310,Papelería,96.76,135.52,160,192,90,35,Baja rotación
-P0311,Producto 311,Bebidas,294.56,530.23,46,1,90,57,Exceso de inventario
-P0312,Producto 312,Electrónica,258.88,490.63,220,1,90,89,Exceso de inventario
-P0313,Producto 313,Ropa,151.05,289.47,212,52,90,29,Exceso de inventario
-P0314,Producto 314,Electrónica,229.99,456.96,58,190,90,20,Baja rotación
-P0315,Producto 315,Bebidas,229.34,455.24,217,197,90,89,Exceso de inventario
-P0316,Producto 316,Ropa,206.58,404.91,124,3,90,25,Exceso de inventario
-P0317,Producto 317,Ropa,236.99,287.01,242,1,90,42,Exceso de inventario
-P0318,Producto 318,Abarrotes,416.16,527.33,182,325,90,39,Baja rotación
-P0319,Producto 319,Abarrotes,188.67,265.8,8,4,90,47,Exceso de inventario
-P0320,Producto 320,Ropa,570.08,923.51,50,3,90,24,Exceso de inventario
-P0321,Producto 321,Abarrotes,551.06,679.14,100,8,90,61,Exceso de inventario
-P0322,Producto 322,Papelería,296.33,553.82,52,54,90,62,Baja rotación
-P0323,Producto 323,Abarrotes,207.09,346.72,33,206,90,18,Normal
-P0324,Producto 324,Papelería,328.23,528.78,244,180,90,43,Exceso de inventario
-P0325,Producto 325,Ropa,511.41,659.98,217,152,90,5,Exceso de inventario
-P0326,Producto 326,Limpieza,396.76,541.68,108,2,90,19,Exceso de inventario
-P0327,Producto 327,Bebidas,485.57,624.57,53,7,90,88,Exceso de inventario
-P0328,Producto 328,Limpieza,326.64,612.17,45,34,90,45,Exceso de inventario
-P0329,Producto 329,Ropa,385.26,634.37,228,6,90,56,Exceso de inventario
-P0330,Producto 330,Ropa,183.57,325.81,82,2,90,79,Exceso de inventario
-P0331,Producto 331,Bebidas,444.91,623.6,3,8,90,64,Baja rotación
-P0332,Producto 332,Electrónica,133.41,195.52,99,1,90,71,Exceso de inventario
-P0333,Producto 333,Papelería,421.46,629.71,113,40,90,64,Exceso de inventario
-P0334,Producto 334,Bebidas,518.52,931.27,155,191,90,44,Baja rotación
-P0335,Producto 335,Ropa,92.28,166.7,84,0,90,90,Exceso de inventario
-P0336,Producto 336,Bebidas,374.41,496.39,230,52,90,25,Exceso de inventario
-P0337,Producto 337,Papelería,70.63,137.75,160,167,90,80,Baja rotación
-P0338,Producto 338,Bebidas,439.54,550.55,246,179,90,16,Exceso de inventario
-P0339,Producto 339,Bebidas,64.43,123.17,91,161,90,79,Baja rotación
-P0340,Producto 340,Limpieza,562.52,694.9,162,6,90,79,Exceso de inventario
-P0341,Producto 341,Limpieza,95.38,131.13,91,200,90,12,Normal
-P0342,Producto 342,Bebidas,575.94,1076.72,174,12,90,63,Exceso de inventario
-P0343,Producto 343,Electrónica,483.52,629.82,186,5,90,89,Exceso de inventario
-P0344,Producto 344,Abarrotes,362.3,544.01,80,1,90,51,Exceso de inventario
-P0345,Producto 345,Papelería,472.84,724.57,234,44,90,30,Exceso de inventario
-P0346,Producto 346,Abarrotes,480.14,652.26,214,13,90,79,Exceso de inventario
-P0347,Producto 347,Limpieza,568.43,996.86,223,4,90,46,Exceso de inventario
-P0348,Producto 348,Papelería,163.23,305.83,54,167,90,10,Normal
-P0349,Producto 349,Abarrotes,360.19,681.98,179,12,90,22,Exceso de inventario
-P0350,Producto 350,Abarrotes,70.6,101.55,26,6,90,61,Exceso de inventario
-P0351,Producto 351,Ropa,375.46,601.2,26,0,90,90,Exceso de inventario
-P0352,Producto 352,Abarrotes,115.21,156.82,243,7,90,19,Baja rotación
-P0353,Producto 353,Papelería,345.5,469.22,38,5,90,71,Exceso de inventario
-P0354,Producto 354,Limpieza,349.87,450.31,216,11,90,10,Exceso de inventario
-P0355,Producto 355,Papelería,287.6,560.54,107,9,90,19,Exceso de inventario
-P0356,Producto 356,Bebidas,320.74,610.94,75,160,90,41,Baja rotación
-P0357,Producto 357,Abarrotes,461.9,836.39,18,370,90,3,Normal
-P0358,Producto 358,Papelería,482.56,767.28,168,47,90,34,Exceso de inventario
-P0359,Producto 359,Ropa,302.91,474.67,180,43,90,81,Exceso de inventario
-P0360,Producto 360,Papelería,365.76,585.32,116,161,90,84,Baja rotación
-P0361,Producto 361,Bebidas,559.77,899.04,202,350,90,78,Baja rotación
-P0362,Producto 362,Limpieza,85.04,129.21,80,42,90,29,Exceso de inventario
-P0363,Producto 363,Electrónica,83.51,105.39,137,179,90,5,Normal
-P0364,Producto 364,Limpieza,66.31,83.34,71,369,90,73,Baja rotación
-P0365,Producto 365,Bebidas,399.85,783.47,145,174,90,33,Baja rotación
-P0366,Producto 366,Limpieza,259.89,405.36,34,47,90,67,Baja rotación
-P0367,Producto 367,Electrónica,467.98,917.35,119,2,90,10,Exceso de inventario
-P0368,Producto 368,Abarrotes,407.67,525.5,137,0,90,90,Normal
-P0369,Producto 369,Limpieza,210.18,340.76,139,44,90,52,Baja rotación
-P0370,Producto 370,Bebidas,540.54,717.06,111,37,90,82,Exceso de inventario
-P0371,Producto 371,Abarrotes,461.08,629.47,160,9,90,9,Exceso de inventario
-P0372,Producto 372,Abarrotes,173.26,203.68,128,49,90,36,Exceso de inventario
-P0373,Producto 373,Limpieza,228.05,285.32,70,59,90,89,Exceso de inventario
-P0374,Producto 374,Abarrotes,198.95,383.84,53,170,90,35,Baja rotación
-P0375,Producto 375,Limpieza,107.2,152.58,161,2,90,59,Baja rotación
-P0376,Producto 376,Electrónica,101.45,169.11,234,8,90,14,Exceso de inventario
-P0377,Producto 377,Papelería,562.63,869.41,188,201,90,65,Baja rotación
-P0378,Producto 378,Abarrotes,271.17,404.15,159,194,90,24,Normal
-P0379,Producto 379,Limpieza,239.24,383.29,230,345,90,51,Baja rotación
-P0380,Producto 380,Abarrotes,441.87,578.48,224,160,90,79,Exceso de inventario
-P0381,Producto 381,Limpieza,338.5,673.72,126,163,90,59,Baja rotación
-P0382,Producto 382,Limpieza,562.64,1038.39,27,5,90,42,Exceso de inventario
-P0383,Producto 383,Ropa,471.48,839.41,158,12,90,17,Exceso de inventario
-P0384,Producto 384,Limpieza,295.43,457.46,155,6,90,30,Exceso de inventario
-P0385,Producto 385,Papelería,235.17,301.0,69,47,90,76,Baja rotación
-P0386,Producto 386,Abarrotes,592.18,1144.43,212,341,90,19,Normal
-P0387,Producto 387,Abarrotes,434.89,626.32,217,9,90,59,Exceso de inventario
-P0388,Producto 388,Abarrotes,571.45,681.51,82,55,90,43,Exceso de inventario
-P0389,Producto 389,Limpieza,84.31,121.49,119,8,90,28,Normal
-P0390,Producto 390,Bebidas,512.56,935.57,48,2,90,64,Exceso de inventario
-P0391,Producto 391,Abarrotes,387.69,651.05,44,2,90,32,Exceso de inventario
-P0392,Producto 392,Bebidas,86.32,154.36,66,5,90,25,Exceso de inventario
-P0393,Producto 393,Papelería,359.13,655.27,91,357,90,47,Baja rotación
-P0394,Producto 394,Ropa,416.37,553.84,68,9,90,68,Exceso de inventario
-P0395,Producto 395,Abarrotes,22.2,42.96,37,196,90,77,Baja rotación
-P0396,Producto 396,Papelería,280.78,427.43,111,36,90,56,Exceso de inventario
-P0397,Producto 397,Bebidas,497.86,842.96,155,4,90,59,Exceso de inventario
-P0398,Producto 398,Limpieza,187.79,216.33,81,1,90,70,Exceso de inventario
-P0399,Producto 399,Bebidas,283.25,564.9,133,186,90,24,Normal
-P0400,Producto 400,Limpieza,273.75,380.17,67,17,90,22,Exceso de inventario
-P0401,Producto 401,Ropa,191.63,230.48,175,353,90,43,Baja rotación
-P0402,Producto 402,Ropa,552.29,850.26,162,1,90,56,Exceso de inventario
-P0403,Producto 403,Electrónica,472.06,594.64,240,37,90,58,Exceso de inventario
-P0404,Producto 404,Electrónica,79.69,101.96,13,179,90,13,Normal
-P0405,Producto 405,Ropa,598.27,1009.54,213,6,90,70,Exceso de inventario
-P0406,Producto 406,Bebidas,529.33,785.52,85,10,90,32,Exceso de inventario
-P0407,Producto 407,Limpieza,181.09,350.15,16,383,90,78,Baja rotación
-P0408,Producto 408,Abarrotes,504.58,717.15,172,16,90,65,Exceso de inventario
-P0409,Producto 409,Ropa,77.26,136.54,42,9,90,88,Exceso de inventario
-P0410,Producto 410,Limpieza,599.48,924.36,43,13,90,56,Exceso de inventario
-P0411,Producto 411,Electrónica,404.43,691.96,244,9,90,47,Exceso de inventario
-P0412,Producto 412,Electrónica,395.32,656.13,55,180,90,16,Baja rotación
-P0413,Producto 413,Bebidas,67.91,105.39,136,206,90,35,Baja rotación
-P0414,Producto 414,Abarrotes,539.76,1056.61,50,8,90,77,Exceso de inventario
-P0415,Producto 415,Papelería,31.96,46.06,30,188,90,34,Baja rotación
-P0416,Producto 416,Bebidas,155.88,202.75,0,12,90,4,Normal
-P0417,Producto 417,Abarrotes,98.67,170.34,4,0,90,90,Baja rotación
-P0418,Producto 418,Bebidas,469.41,877.38,118,43,90,53,Exceso de inventario
-P0419,Producto 419,Papelería,130.95,155.07,108,322,90,56,Baja rotación
-P0420,Producto 420,Bebidas,547.72,839.21,9,2,90,88,Exceso de inventario
-P0421,Producto 421,Papelería,398.92,761.38,87,4,90,84,Normal
-P0422,Producto 422,Limpieza,36.16,64.62,68,50,90,47,Exceso de inventario
-P0423,Producto 423,Papelería,18.18,36.23,142,176,90,49,Baja rotación
-P0424,Producto 424,Electrónica,45.22,72.43,248,2,90,72,Exceso de inventario
-P0425,Producto 425,Abarrotes,369.47,632.16,172,5,90,4,Exceso de inventario
-P0426,Producto 426,Electrónica,483.87,680.86,229,198,90,53,Baja rotación
-P0427,Producto 427,Limpieza,154.55,302.21,48,8,90,42,Exceso de inventario
-P0428,Producto 428,Bebidas,511.9,748.08,53,2,90,70,Exceso de inventario
-P0429,Producto 429,Electrónica,48.48,86.18,187,1,90,72,Exceso de inventario
-P0430,Producto 430,Abarrotes,483.56,721.8,77,8,90,59,Exceso de inventario
-P0431,Producto 431,Ropa,557.76,907.78,212,45,90,59,Exceso de inventario
-P0432,Producto 432,Ropa,466.68,822.2,115,159,90,62,Baja rotación
-P0433,Producto 433,Abarrotes,423.4,670.07,50,60,90,52,Baja rotación
-P0434,Producto 434,Limpieza,505.22,970.54,211,43,90,20,Exceso de inventario
-P0435,Producto 435,Electrónica,38.49,57.98,137,365,90,25,Normal
-P0436,Producto 436,Abarrotes,133.04,226.17,200,5,90,66,Exceso de inventario
-P0437,Producto 437,Limpieza,88.08,126.92,113,7,90,55,Exceso de inventario
-P0438,Producto 438,Bebidas,310.15,464.27,31,369,90,21,Normal
-P0439,Producto 439,Abarrotes,450.94,687.25,170,25,90,79,Exceso de inventario
-P0440,Producto 440,Ropa,383.56,482.11,31,189,90,88,Baja rotación
-P0441,Producto 441,Limpieza,512.91,629.84,165,178,90,56,Baja rotación
-P0442,Producto 442,Ropa,105.8,181.7,104,1,90,20,Baja rotación
-P0443,Producto 443,Electrónica,444.75,759.27,197,45,90,84,Exceso de inventario
-P0444,Producto 444,Papelería,127.93,219.2,217,9,90,21,Exceso de inventario
-P0445,Producto 445,Papelería,173.39,202.31,101,1,90,38,Exceso de inventario
-P0446,Producto 446,Electrónica,430.29,614.27,220,41,90,77,Normal
-P0447,Producto 447,Limpieza,588.42,775.62,27,13,90,46,Exceso de inventario
-P0448,Producto 448,Limpieza,372.75,675.21,26,157,90,21,Normal
-P0449,Producto 449,Ropa,46.88,88.21,248,411,90,7,Normal
-P0450,Producto 450,Limpieza,375.54,510.61,143,168,90,32,Baja rotación
-P0451,Producto 451,Electrónica,39.78,68.33,112,7,90,60,Exceso de inventario
-P0452,Producto 452,Bebidas,532.23,670.59,38,7,90,64,Exceso de inventario
-P0453,Producto 453,Papelería,430.1,595.21,72,4,90,20,Exceso de inventario
-P0454,Producto 454,Electrónica,116.28,147.43,171,5,90,14,Exceso de inventario
-P0455,Producto 455,Bebidas,68.66,95.51,205,363,90,63,Baja rotación
-P0456,Producto 456,Electrónica,122.37,210.91,229,9,90,14,Exceso de inventario
-P0457,Producto 457,Limpieza,588.32,1131.8,101,12,90,5,Exceso de inventario
-P0458,Producto 458,Abarrotes,283.26,374.51,113,171,90,43,Baja rotación
-P0459,Producto 459,Papelería,473.69,763.0,40,12,90,51,Exceso de inventario
-P0460,Producto 460,Papelería,387.3,676.3,20,1,90,21,Exceso de inventario
-P0461,Producto 461,Papelería,349.86,685.72,109,3,90,19,Exceso de inventario
-P0462,Producto 462,Limpieza,99.9,166.69,144,44,90,21,Exceso de inventario
-P0463,Producto 463,Bebidas,568.42,776.94,26,187,90,30,Normal
-P0464,Producto 464,Abarrotes,191.29,321.68,102,8,90,0,Exceso de inventario
-P0465,Producto 465,Ropa,353.14,502.31,160,355,90,1,Normal
-P0466,Producto 466,Bebidas,424.37,840.13,202,211,90,33,Baja rotación
-P0467,Producto 467,Papelería,394.8,588.14,234,177,90,1,Exceso de inventario
-P0468,Producto 468,Papelería,565.25,979.36,85,11,90,28,Exceso de inventario
-P0469,Producto 469,Abarrotes,101.84,119.13,97,3,90,52,Exceso de inventario
-P0470,Producto 470,Papelería,312.39,465.48,218,176,90,2,Exceso de inventario
-P0471,Producto 471,Abarrotes,251.36,476.04,173,14,90,55,Exceso de inventario
-P0472,Producto 472,Limpieza,292.39,487.91,68,43,90,55,Exceso de inventario
-P0473,Producto 473,Limpieza,84.74,129.43,171,181,90,51,Baja rotación
-P0474,Producto 474,Papelería,93.45,181.81,39,2,90,56,Exceso de inventario
-P0475,Producto 475,Electrónica,177.67,333.29,112,197,90,72,Normal
-P0476,Producto 476,Papelería,193.25,275.17,76,393,90,6,Normal
-P0477,Producto 477,Electrónica,265.32,427.93,248,182,90,15,Exceso de inventario
-P0478,Producto 478,Ropa,372.43,583.36,8,8,90,28,Baja rotación
-P0479,Producto 479,Papelería,386.26,651.76,214,174,90,61,Exceso de inventario
-P0480,Producto 480,Papelería,255.91,366.97,70,45,90,78,Exceso de inventario
-P0481,Producto 481,Limpieza,254.14,345.01,9,156,90,82,Baja rotación
-P0482,Producto 482,Limpieza,142.31,274.06,165,167,90,52,Baja rotación
-P0483,Producto 483,Papelería,359.16,695.08,169,166,90,36,Exceso de inventario
-P0484,Producto 484,Ropa,200.47,374.24,35,8,90,37,Exceso de inventario
-P0485,Producto 485,Papelería,36.1,71.53,9,3,90,5,Exceso de inventario
-P0486,Producto 486,Electrónica,259.76,463.22,27,6,90,41,Exceso de inventario
-P0487,Producto 487,Papelería,292.37,526.26,102,45,90,46,Exceso de inventario
-P0488,Producto 488,Ropa,146.97,264.28,33,44,90,18,Normal
-P0489,Producto 489,Ropa,349.89,545.31,175,61,90,69,Exceso de inventario
-P0490,Producto 490,Bebidas,345.98,532.11,19,4,90,73,Exceso de inventario
-P0491,Producto 491,Electrónica,425.67,576.44,197,163,90,27,Exceso de inventario
-P0492,Producto 492,Ropa,394.05,669.13,218,368,90,82,Baja rotación
-P0493,Producto 493,Ropa,396.67,553.72,179,10,90,9,Exceso de inventario
-P0494,Producto 494,Papelería,199.99,273.81,236,157,90,81,Exceso de inventario
-P0495,Producto 495,Bebidas,475.65,783.9,234,39,90,69,Exceso de inventario
-P0496,Producto 496,Bebidas,336.25,503.87,11,34,90,20,Normal
-P0497,Producto 497,Papelería,267.38,357.23,85,1,90,58,Exceso de inventario
-P0498,Producto 498,Papelería,381.22,702.84,190,189,90,27,Exceso de inventario
-P0499,Producto 499,Bebidas,225.98,425.18,84,383,90,71,Baja rotación
-P0500,Producto 500,Limpieza,314.95,407.09,184,181,90,14,Exceso de inventario
-P0501,Producto 501,Papelería,445.97,515.71,193,360,90,22,Normal
-P0502,Producto 502,Bebidas,533.55,766.02,249,339,90,27,Exceso de inventario
-P0503,Producto 503,Ropa,553.82,1012.32,82,7,90,17,Exceso de inventario
-P0504,Producto 504,Abarrotes,309.63,576.93,86,34,90,29,Exceso de inventario
-P0505,Producto 505,Bebidas,319.36,404.81,6,39,90,54,Baja rotación
-P0506,Producto 506,Ropa,482.92,873.21,71,350,90,56,Baja rotación
-P0507,Producto 507,Electrónica,198.95,248.36,70,4,90,49,Exceso de inventario
-P0508,Producto 508,Electrónica,504.87,747.99,113,11,90,17,Exceso de inventario
-P0509,Producto 509,Papelería,304.07,607.78,105,190,90,18,Normal
-P0510,Producto 510,Bebidas,82.78,108.75,214,13,90,82,Exceso de inventario
-P0511,Producto 511,Electrónica,57.15,73.2,193,211,90,22,Normal
-P0512,Producto 512,Electrónica,507.57,766.12,182,11,90,9,Exceso de inventario
-P0513,Producto 513,Ropa,47.51,79.66,1,368,90,40,Baja rotación
-P0514,Producto 514,Bebidas,179.16,348.1,117,166,90,0,Normal
-P0515,Producto 515,Electrónica,210.47,417.51,182,10,90,30,Exceso de inventario
-P0516,Producto 516,Limpieza,116.2,140.51,61,181,90,76,Baja rotación
-P0517,Producto 517,Electrónica,198.63,251.72,106,6,90,24,Exceso de inventario
-P0518,Producto 518,Papelería,449.48,819.01,181,41,90,63,Exceso de inventario
-P0519,Producto 519,Limpieza,23.59,32.56,198,47,90,44,Normal
-P0520,Producto 520,Ropa,498.9,948.97,213,201,90,31,Exceso de inventario
-P0521,Producto 521,Papelería,516.08,884.53,107,2,90,59,Normal
-P0522,Producto 522,Ropa,232.77,289.81,99,14,90,53,Exceso de inventario
-P0523,Producto 523,Papelería,104.86,194.79,95,179,90,28,Normal
-P0524,Producto 524,Electrónica,366.49,476.4,167,37,90,20,Exceso de inventario
-P0525,Producto 525,Bebidas,85.01,128.36,104,45,90,82,Exceso de inventario
-P0526,Producto 526,Papelería,228.48,369.99,100,4,90,15,Exceso de inventario
-P0527,Producto 527,Electrónica,575.68,907.07,42,8,90,86,Exceso de inventario
-P0528,Producto 528,Bebidas,597.35,1035.35,119,175,90,42,Exceso de inventario
-P0529,Producto 529,Bebidas,466.68,795.59,59,1,90,89,Exceso de inventario
-P0530,Producto 530,Bebidas,196.91,392.49,131,8,90,31,Exceso de inventario
-P0531,Producto 531,Papelería,417.28,834.35,222,390,90,50,Baja rotación
-P0532,Producto 532,Abarrotes,427.66,679.55,193,1,90,55,Exceso de inventario
-P0533,Producto 533,Ropa,241.89,297.75,119,181,90,30,Normal
-P0534,Producto 534,Electrónica,389.92,689.64,244,7,90,19,Exceso de inventario
-P0535,Producto 535,Abarrotes,21.28,42.14,245,192,90,46,Exceso de inventario
-P0536,Producto 536,Electrónica,137.3,195.05,111,186,90,59,Baja rotación
-P0537,Producto 537,Ropa,322.18,496.81,190,189,90,23,Exceso de inventario
-P0538,Producto 538,Ropa,110.79,167.41,85,7,90,69,Exceso de inventario
-P0539,Producto 539,Electrónica,112.06,133.77,219,33,90,57,Exceso de inventario
-P0540,Producto 540,Limpieza,504.24,868.01,93,182,90,14,Normal
-P0541,Producto 541,Abarrotes,593.64,860.98,64,6,90,84,Exceso de inventario
-P0542,Producto 542,Abarrotes,340.24,619.01,33,8,90,3,Exceso de inventario
-P0543,Producto 543,Limpieza,505.86,939.53,210,2,90,58,Exceso de inventario
-P0544,Producto 544,Electrónica,594.34,1098.37,74,333,90,39,Baja rotación
-P0545,Producto 545,Abarrotes,97.83,147.15,203,166,90,58,Exceso de inventario
-P0546,Producto 546,Papelería,277.22,394.57,21,49,90,69,Baja rotación
-P0547,Producto 547,Electrónica,244.66,437.08,125,164,90,61,Baja rotación
-P0548,Producto 548,Bebidas,61.83,113.22,106,54,90,58,Exceso de inventario
-P0549,Producto 549,Papelería,456.87,716.18,109,38,90,75,Exceso de inventario
-P0550,Producto 550,Bebidas,268.76,513.08,41,6,90,63,Exceso de inventario
-P0551,Producto 551,Papelería,289.56,368.41,18,43,90,73,Baja rotación
-P0552,Producto 552,Bebidas,103.14,195.68,86,10,90,36,Normal
-P0553,Producto 553,Limpieza,120.84,148.84,117,193,90,18,Normal
-P0554,Producto 554,Limpieza,545.66,698.72,198,164,90,21,Exceso de inventario
-P0555,Producto 555,Papelería,41.12,65.95,115,6,90,55,Exceso de inventario
-P0556,Producto 556,Bebidas,151.22,182.58,61,40,90,47,Normal
-P0557,Producto 557,Papelería,185.85,222.07,65,2,90,6,Exceso de inventario
-P0558,Producto 558,Limpieza,301.77,347.17,152,379,90,18,Normal
-P0559,Producto 559,Bebidas,358.07,544.58,108,359,90,87,Baja rotación
-P0560,Producto 560,Electrónica,303.57,548.99,225,384,90,65,Baja rotación
-P0561,Producto 561,Ropa,64.21,75.74,109,5,90,67,Normal
-P0562,Producto 562,Limpieza,157.55,268.53,141,2,90,17,Exceso de inventario
-P0563,Producto 563,Abarrotes,508.5,940.55,15,7,90,5,Exceso de inventario
-P0564,Producto 564,Limpieza,387.99,501.59,48,0,90,90,Exceso de inventario
-P0565,Producto 565,Electrónica,394.75,503.24,212,3,90,77,Exceso de inventario
-P0566,Producto 566,Abarrotes,407.07,765.98,86,3,90,45,Exceso de inventario
-P0567,Producto 567,Abarrotes,461.3,853.25,105,352,90,70,Baja rotación
-P0568,Producto 568,Papelería,48.99,78.78,147,0,90,90,Baja rotación
-P0569,Producto 569,Abarrotes,229.47,423.68,14,3,90,44,Exceso de inventario
-P0570,Producto 570,Limpieza,330.62,406.28,126,181,90,54,Baja rotación
-P0571,Producto 571,Ropa,213.0,316.37,86,40,90,86,Exceso de inventario
-P0572,Producto 572,Bebidas,509.02,904.59,37,206,90,39,Baja rotación
-P0573,Producto 573,Limpieza,297.3,406.95,104,53,90,53,Exceso de inventario
-P0574,Producto 574,Abarrotes,464.65,831.48,111,194,90,82,Baja rotación
-P0575,Producto 575,Ropa,513.43,810.48,46,47,90,33,Baja rotación
-P0576,Producto 576,Electrónica,310.3,554.73,135,38,90,75,Exceso de inventario
-P0577,Producto 577,Papelería,547.09,845.24,186,152,90,48,Exceso de inventario
-P0578,Producto 578,Papelería,358.47,524.34,66,8,90,79,Exceso de inventario
-P0579,Producto 579,Limpieza,512.41,684.74,241,5,90,42,Exceso de inventario
-P0580,Producto 580,Abarrotes,214.25,284.34,153,39,90,56,Exceso de inventario
-P0581,Producto 581,Limpieza,306.81,548.81,193,5,90,29,Exceso de inventario
-P0582,Producto 582,Abarrotes,325.88,407.7,17,155,90,57,Baja rotación
-P0583,Producto 583,Electrónica,76.41,93.46,191,12,90,29,Exceso de inventario
-P0584,Producto 584,Abarrotes,248.15,322.56,84,2,90,54,Exceso de inventario
-P0585,Producto 585,Papelería,551.64,716.6,177,7,90,70,Exceso de inventario
-P0586,Producto 586,Electrónica,384.04,710.34,201,167,90,39,Exceso de inventario
-P0587,Producto 587,Bebidas,118.84,176.92,62,7,90,38,Exceso de inventario
-P0588,Producto 588,Papelería,213.23,424.72,64,37,90,28,Normal
-P0589,Producto 589,Ropa,127.09,160.98,14,183,90,65,Baja rotación
-P0590,Producto 590,Limpieza,29.52,50.35,151,3,90,53,Exceso de inventario
-P0591,Producto 591,Abarrotes,557.56,853.86,193,178,90,46,Exceso de inventario
-P0592,Producto 592,Limpieza,277.2,411.36,102,8,90,2,Exceso de inventario
-P0593,Producto 593,Electrónica,194.91,369.12,40,7,90,9,Exceso de inventario
-P0594,Producto 594,Ropa,365.11,722.65,79,40,90,0,Exceso de inventario
-P0595,Producto 595,Bebidas,19.28,36.48,100,362,90,76,Baja rotación
-P0596,Producto 596,Ropa,177.64,233.32,229,3,90,76,Normal
-P0597,Producto 597,Bebidas,426.27,570.21,31,47,90,6,Normal
-P0598,Producto 598,Bebidas,385.76,658.75,85,5,90,4,Exceso de inventario
-P0599,Producto 599,Limpieza,589.36,822.58,159,41,90,70,Exceso de inventario
-P0600,Producto 600,Abarrotes,377.91,670.61,59,52,90,47,Exceso de inventario
+id_producto,nombre,categoria,precio_compra,precio_venta,existencia_actual,unidades_vendidas,dias_periodo,dias_desde_ultima_venta,etiqueta,origen
+SIM001,Coca-Cola 600 ml,Bebidas,14.0,17.8,286,1071,90,26,Normal,SIMULADO
+SIM002,Coca-Cola 2.5 L,Bebidas,34.0,49.5,338,83,90,67,Exceso de inventario,SIMULADO
+SIM003,Sprite 600 ml,Bebidas,13.0,18.03,31,357,90,67,Baja rotación,SIMULADO
+SIM004,Agua Ciel 1 L,Bebidas,9.0,12.13,8,79,90,80,Baja rotación,SIMULADO
+SIM005,Jugo Del Valle Durazno 1 L,Bebidas,22.0,29.52,298,4,90,28,Exceso de inventario,SIMULADO
+SIM006,Cerveza Corona 355 ml,Bebidas,17.0,25.78,2,7,90,48,Baja rotación,SIMULADO
+SIM007,Gatorade Naranja 600 ml,Bebidas,19.0,29.68,53,94,90,50,Baja rotación,SIMULADO
+SIM008,Té Lipton Limón 1 L,Bebidas,21.0,26.69,132,330,90,30,Normal,SIMULADO
+SIM009,Sabritas Original 45 g,Botanas,11.0,16.07,232,370,90,69,Baja rotación,SIMULADO
+SIM010,Sabritas Adobadas 45 g,Botanas,11.0,14.51,13,29,90,44,Baja rotación,SIMULADO
+SIM011,Doritos Nacho 62 g,Botanas,13.5,21.42,207,3,90,17,Exceso de inventario,SIMULADO
+SIM012,Ruffles Queso 47 g,Botanas,11.5,18.03,52,88,90,37,Baja rotación,SIMULADO
+SIM013,Cacahuates Japoneses Kreelo 120 g,Botanas,15.0,21.82,16,30,90,32,Baja rotación,SIMULADO
+SIM014,Galletas Emperador Chocolate 100 g,Botanas,12.0,18.01,2,25,90,79,Baja rotación,SIMULADO
+SIM015,Galletas Marías Gamesa 170 g,Botanas,14.0,19.68,53,92,90,31,Baja rotación,SIMULADO
+SIM016,Chocolate Carlos V 40 g,Botanas,8.0,12.24,179,107,90,82,Exceso de inventario,SIMULADO
+SIM017,Maseca Harina de Maíz 1 kg,Abarrotes,17.0,23.45,13,96,90,60,Baja rotación,SIMULADO
+SIM018,Arroz Sós Grano Largo 1 kg,Abarrotes,24.0,32.05,0,4,90,40,Normal,SIMULADO
+SIM019,Frijol Negro Verde Valle 900 g,Abarrotes,28.0,36.71,143,22,90,19,Exceso de inventario,SIMULADO
+SIM020,Azúcar Estándar Zulka 1 kg,Abarrotes,26.0,33.55,128,394,90,84,Baja rotación,SIMULADO
+SIM021,Aceite Nutrioli 900 ml,Abarrotes,42.0,59.23,9,99,90,55,Baja rotación,SIMULADO
+SIM022,Sal Refinada La Fina 1 kg,Abarrotes,9.0,12.35,404,360,90,78,Exceso de inventario,SIMULADO
+SIM023,Atún Dolores en Agua 140 g,Abarrotes,15.0,21.98,56,390,90,67,Baja rotación,SIMULADO
+SIM024,Sardina Calmex en Tomate 155 g,Abarrotes,18.0,21.69,2,27,90,40,Baja rotación,SIMULADO
+SIM025,Salsa Valentina 370 ml,Abarrotes,16.0,22.07,11,91,90,20,Exceso de inventario,SIMULADO
+SIM026,Mayonesa Helmans 390 g,Abarrotes,34.0,45.77,10,83,90,42,Baja rotación,SIMULADO
+SIM027,Pasta Barilla Spaghetti 500 g,Abarrotes,23.0,29.4,3,7,90,32,Baja rotación,SIMULADO
+SIM028,Sopa Maruchan Camarón 64 g,Abarrotes,10.0,14.38,2,3,90,33,Normal,SIMULADO
+SIM029,Mole Doña María 160 g,Abarrotes,29.0,39.85,160,346,90,3,Normal,SIMULADO
+SIM030,Café Nescafé Clásico 100 g,Abarrotes,78.0,102.96,518,376,90,49,Exceso de inventario,SIMULADO
+SIM031,Leche Lala Entera 1 L,Lácteos,21.0,26.96,36,91,90,48,Baja rotación,SIMULADO
+SIM032,Leche Alpura Deslactosada 1 L,Lácteos,23.0,35.65,225,382,90,4,Normal,SIMULADO
+SIM033,Yoghurt Danone Fresa 125 g,Lácteos,9.5,14.43,41,93,90,45,Baja rotación,SIMULADO
+SIM034,Queso Oaxaca Lala 400 g,Lácteos,62.0,89.45,118,327,90,36,Baja rotación,SIMULADO
+SIM035,Crema Lala para Batir 250 ml,Lácteos,25.0,33.45,13,32,90,61,Baja rotación,SIMULADO
+SIM036,Mantequilla Gloria 90 g,Lácteos,19.0,30.0,318,97,90,83,Exceso de inventario,SIMULADO
+SIM037,Huevo Blanco San Juan 18 pzas,Lácteos,58.0,82.67,62,375,90,48,Baja rotación,SIMULADO
+SIM038,Pan Bimbo Blanco Grande,Panadería,42.0,57.67,32,373,90,80,Baja rotación,SIMULADO
+SIM039,Pan Bimbo Integral,Panadería,46.0,71.77,17,25,90,77,Baja rotación,SIMULADO
+SIM040,Tortillas de Harina Mission 10 pzas,Panadería,35.0,46.47,101,403,90,14,Normal,SIMULADO
+SIM041,Bolillo Pieza,Panadería,3.5,5.17,184,84,90,76,Exceso de inventario,SIMULADO
+SIM042,Marinela Gansito 2 pzas,Panadería,14.0,18.56,398,354,90,15,Exceso de inventario,SIMULADO
+SIM043,Pastel Bimbo Chocolate,Panadería,39.0,50.88,35,361,90,10,Normal,SIMULADO
+SIM044,Detergente Ariel Polvo 1 kg,Limpieza,58.0,85.86,36,99,90,16,Normal,SIMULADO
+SIM045,Cloro Cloralex 1 L,Limpieza,17.0,21.95,39,372,90,53,Exceso de inventario,SIMULADO
+SIM046,Suavitel Fresh 850 ml,Limpieza,39.0,54.49,45,102,90,4,Baja rotación,SIMULADO
+SIM047,Jabón Zote Rosa 400 g,Limpieza,13.0,18.62,319,1106,90,61,Baja rotación,SIMULADO
+SIM048,Fabuloso Lavanda 1 L,Limpieza,27.0,34.44,588,1090,90,57,Baja rotación,SIMULADO
+SIM049,Pinol Original 828 ml,Limpieza,36.0,53.73,128,1082,90,41,Baja rotación,SIMULADO
+SIM050,Estropajo Scotch-Brite Pieza,Limpieza,12.0,17.03,296,1092,90,2,Normal,SIMULADO
+SIM051,Papel Higiénico Kleenex 4 rollos,Higiene,36.0,52.15,1,5,90,24,Baja rotación,SIMULADO
+SIM052,Papel Higiénico Regio 12 rollos,Higiene,84.0,113.3,57,100,90,50,Baja rotación,SIMULADO
+SIM053,Servilletas Kleenex 100 pzas,Higiene,22.0,30.1,80,373,90,13,Normal,SIMULADO
+SIM054,Shampoo Head & Shoulders 400 ml,Higiene,69.0,96.46,37,93,90,54,Baja rotación,SIMULADO
+SIM055,Shampoo Sedal Keratina 340 ml,Higiene,49.0,68.01,210,100,90,67,Exceso de inventario,SIMULADO
+SIM056,Pasta Dental Colgate 100 ml,Higiene,32.0,47.05,5,27,90,69,Baja rotación,SIMULADO
+SIM057,Desodorante Rexona Clinical 50 ml,Higiene,41.0,58.67,4,30,90,1,Normal,SIMULADO
+SIM058,Rastrillos Bic 3 pzas,Higiene,27.0,36.9,363,383,90,43,Baja rotación,SIMULADO
+SIM059,Pañales Huggies Etapa 4 (20 pzas),Higiene,189.0,226.94,258,1,90,47,Baja rotación,SIMULADO
+SIM060,Toallas Sanitarias Saba Ultra 10 pzas,Higiene,34.0,51.6,467,377,90,28,Exceso de inventario,SIMULADO
+SIM061,Pollo Entero Bachoco 1 kg,Carnes,74.0,104.17,3,10,90,89,Normal,SIMULADO
+SIM062,Salchicha Fud Viena 250 g,Carnes,29.0,38.59,50,92,90,32,Exceso de inventario,SIMULADO
+SIM063,Jamón Fud Virginia 200 g,Carnes,36.0,50.4,197,7,90,64,Exceso de inventario,SIMULADO
+SIM064,Chorizo Coronado Rojo 250 g,Carnes,48.0,59.39,119,372,90,59,Baja rotación,SIMULADO
+SIM065,Plátano Tabasco kg,Frutas y verduras,19.0,29.68,133,28,90,14,Exceso de inventario,SIMULADO
+SIM066,Manzana Roja kg,Frutas y verduras,38.0,60.64,52,99,90,5,Normal,SIMULADO
+SIM067,Jitomate Saladette kg,Frutas y verduras,26.0,31.81,6,48,90,76,Baja rotación,SIMULADO
+SIM068,Cebolla Blanca kg,Frutas y verduras,21.0,28.21,29,90,90,22,Normal,SIMULADO
+SIM069,Aguacate Hass Pieza,Frutas y verduras,16.0,23.87,72,360,90,59,Baja rotación,SIMULADO
+SIM070,Limón Pieza,Frutas y verduras,1.5,1.99,3,31,90,38,Baja rotación,SIMULADO
+SIM071,Pilas Duracell AA 4 pzas,Varios,54.0,77.05,231,378,90,70,Baja rotación,SIMULADO
+SIM072,Velas Aromáticas Pieza,Varios,15.0,20.5,408,348,90,46,Exceso de inventario,SIMULADO
+SIM073,Bolsas de Plástico Asa Pieza,Varios,0.8,1.21,363,1099,90,24,Normal,SIMULADO
+SIM074,Coca-Cola 600 ml - Edición económica,Bebidas,39.13,61.96,48,87,90,17,Normal,SIMULADO
+SIM075,Coca-Cola 600 ml - Paquete 6 pzas,Bebidas,37.48,58.29,128,356,90,84,Baja rotación,SIMULADO
+SIM076,Coca-Cola 600 ml - Paquete 3 pzas,Bebidas,46.1,66.77,165,7,90,60,Exceso de inventario,SIMULADO
+SIM077,Coca-Cola 2.5 L - Paquete 6 pzas,Bebidas,100.17,126.63,595,1040,90,61,Baja rotación,SIMULADO
+SIM078,Coca-Cola 2.5 L - Presentación familiar,Bebidas,61.73,97.46,2,32,90,51,Baja rotación,SIMULADO
+SIM079,Coca-Cola 2.5 L - Paquete 3 pzas,Bebidas,55.13,66.68,32,109,90,21,Normal,SIMULADO
+SIM080,Sprite 600 ml - Paquete 6 pzas,Bebidas,50.8,67.01,0,3,90,22,Normal,SIMULADO
+SIM081,Sprite 600 ml - Presentación chica,Bebidas,44.05,57.82,105,365,90,31,Baja rotación,SIMULADO
+SIM082,Sprite 600 ml - Edición económica,Bebidas,43.37,63.7,25,94,90,84,Baja rotación,SIMULADO
+SIM083,Agua Ciel 1 L - Edición económica,Bebidas,29.87,41.67,587,1063,90,15,Normal,SIMULADO
+SIM084,Agua Ciel 1 L - Presentación familiar,Bebidas,34.04,42.11,1,3,90,41,Exceso de inventario,SIMULADO
+SIM085,Agua Ciel 1 L - Paquete 3 pzas,Bebidas,15.29,18.43,149,322,90,0,Normal,SIMULADO
+SIM086,Jugo Del Valle Durazno 1 L - Paquete 3 pzas,Bebidas,54.15,78.07,31,93,90,10,Normal,SIMULADO
+SIM087,Jugo Del Valle Durazno 1 L - Presentación familiar,Bebidas,42.33,59.12,15,26,90,6,Normal,SIMULADO
+SIM088,Jugo Del Valle Durazno 1 L - Edición económica,Bebidas,69.36,99.92,199,341,90,67,Baja rotación,SIMULADO
+SIM089,Cerveza Corona 355 ml - Presentación chica,Bebidas,56.86,81.06,0,4,90,13,Normal,SIMULADO
+SIM090,Cerveza Corona 355 ml - Edición económica,Bebidas,34.72,54.03,49,88,90,17,Normal,SIMULADO
+SIM091,Cerveza Corona 355 ml - Presentación familiar,Bebidas,56.73,88.92,13,86,90,78,Baja rotación,SIMULADO
+SIM092,Gatorade Naranja 600 ml - Paquete 3 pzas,Bebidas,46.7,59.56,2,6,90,64,Baja rotación,SIMULADO
+SIM093,Gatorade Naranja 600 ml - Presentación chica,Bebidas,59.64,94.04,161,92,90,54,Exceso de inventario,SIMULADO
+SIM094,Gatorade Naranja 600 ml - Paquete 6 pzas,Bebidas,58.73,88.98,3,20,90,81,Baja rotación,SIMULADO
+SIM095,Té Lipton Limón 1 L - Edición económica,Bebidas,48.9,71.18,17,21,90,39,Baja rotación,SIMULADO
+SIM096,Té Lipton Limón 1 L - Paquete 3 pzas,Bebidas,44.7,65.43,628,1085,90,50,Baja rotación,SIMULADO
+SIM097,Té Lipton Limón 1 L - Presentación chica,Bebidas,70.75,100.35,30,93,90,46,Baja rotación,SIMULADO
+SIM098,Sabritas Original 45 g - Paquete 6 pzas,Botanas,35.87,56.2,5,19,90,78,Baja rotación,SIMULADO
+SIM099,Sabritas Original 45 g - Paquete 3 pzas,Botanas,26.94,34.84,69,361,90,84,Baja rotación,SIMULADO
+SIM100,Sabritas Original 45 g - Edición económica,Botanas,35.92,51.71,21,98,90,26,Normal,SIMULADO
+SIM101,Sabritas Adobadas 45 g - Paquete 3 pzas,Botanas,32.8,50.04,151,89,90,35,Exceso de inventario,SIMULADO
+SIM102,Sabritas Adobadas 45 g - Presentación familiar,Botanas,25.13,31.51,9,95,90,57,Baja rotación,SIMULADO
+SIM103,Sabritas Adobadas 45 g - Edición económica,Botanas,35.28,51.02,23,98,90,36,Baja rotación,SIMULADO
+SIM104,Doritos Nacho 62 g - Paquete 3 pzas,Botanas,45.42,61.82,31,344,90,15,Normal,SIMULADO
+SIM105,Doritos Nacho 62 g - Presentación familiar,Botanas,26.92,40.55,2,25,90,15,Normal,SIMULADO
+SIM106,Doritos Nacho 62 g - Edición económica,Botanas,26.65,32.7,211,363,90,7,Normal,SIMULADO
+SIM107,Ruffles Queso 47 g - Presentación familiar,Botanas,21.27,30.69,42,93,90,13,Normal,SIMULADO
+SIM108,Ruffles Queso 47 g - Edición económica,Botanas,42.0,64.8,47,102,90,70,Baja rotación,SIMULADO
+SIM109,Ruffles Queso 47 g - Paquete 6 pzas,Botanas,34.09,49.48,13,30,90,2,Normal,SIMULADO
+SIM110,Cacahuates Japoneses Kreelo 120 g - Paquete 6 pzas,Botanas,50.97,67.72,7,31,90,63,Baja rotación,SIMULADO
+SIM111,Cacahuates Japoneses Kreelo 120 g - Presentación familiar,Botanas,35.4,51.77,42,113,90,49,Baja rotación,SIMULADO
+SIM112,Cacahuates Japoneses Kreelo 120 g - Edición económica,Botanas,24.88,33.22,3,3,90,83,Baja rotación,SIMULADO
+SIM113,Galletas Emperador Chocolate 100 g - Paquete 6 pzas,Botanas,33.45,49.09,3,4,90,51,Baja rotación,SIMULADO
+SIM114,Galletas Emperador Chocolate 100 g - Presentación chica,Botanas,39.02,48.83,110,377,90,82,Baja rotación,SIMULADO
+SIM115,Galletas Emperador Chocolate 100 g - Edición económica,Botanas,36.18,47.47,16,26,90,47,Baja rotación,SIMULADO
+SIM116,Galletas Marías Gamesa 170 g - Paquete 6 pzas,Botanas,45.28,54.93,436,338,90,78,Exceso de inventario,SIMULADO
+SIM117,Galletas Marías Gamesa 170 g - Presentación chica,Botanas,44.19,54.51,1,8,90,66,Baja rotación,SIMULADO
+SIM118,Galletas Marías Gamesa 170 g - Presentación familiar,Botanas,22.82,32.45,144,351,90,55,Baja rotación,SIMULADO
+SIM119,Chocolate Carlos V 40 g - Presentación familiar,Botanas,31.21,40.34,6,26,90,13,Normal,SIMULADO
+SIM120,Chocolate Carlos V 40 g - Paquete 3 pzas,Botanas,15.65,22.01,66,371,90,50,Baja rotación,SIMULADO
+SIM121,Chocolate Carlos V 40 g - Presentación chica,Botanas,22.78,33.35,617,1133,90,51,Baja rotación,SIMULADO
+SIM122,Maseca Harina de Maíz 1 kg - Presentación familiar,Abarrotes,59.73,92.73,158,372,90,22,Normal,SIMULADO
+SIM123,Maseca Harina de Maíz 1 kg - Presentación chica,Abarrotes,37.62,50.49,6,97,90,85,Baja rotación,SIMULADO
+SIM124,Maseca Harina de Maíz 1 kg - Paquete 6 pzas,Abarrotes,50.94,67.62,1,4,90,16,Exceso de inventario,SIMULADO
+SIM125,Arroz Sós Grano Largo 1 kg - Edición económica,Abarrotes,93.41,123.81,237,352,90,54,Baja rotación,SIMULADO
+SIM126,Arroz Sós Grano Largo 1 kg - Presentación chica,Abarrotes,72.14,89.97,269,112,90,40,Exceso de inventario,SIMULADO
+SIM127,Arroz Sós Grano Largo 1 kg - Presentación familiar,Abarrotes,77.51,113.57,2,3,90,69,Baja rotación,SIMULADO
+SIM128,Frijol Negro Verde Valle 900 g - Presentación chica,Abarrotes,69.94,106.86,17,88,90,54,Baja rotación,SIMULADO
+SIM129,Frijol Negro Verde Valle 900 g - Paquete 6 pzas,Abarrotes,59.43,82.56,2,6,90,45,Baja rotación,SIMULADO
+SIM130,Frijol Negro Verde Valle 900 g - Paquete 3 pzas,Abarrotes,84.18,119.81,51,96,90,36,Baja rotación,SIMULADO
+SIM131,Azúcar Estándar Zulka 1 kg - Edición económica,Abarrotes,55.66,88.13,56,86,90,9,Normal,SIMULADO
+SIM132,Azúcar Estándar Zulka 1 kg - Presentación familiar,Abarrotes,94.72,140.14,59,377,90,87,Baja rotación,SIMULADO
+SIM133,Azúcar Estándar Zulka 1 kg - Paquete 3 pzas,Abarrotes,43.01,64.43,5,25,90,88,Baja rotación,SIMULADO
+SIM134,Aceite Nutrioli 900 ml - Edición económica,Abarrotes,119.27,185.56,6,24,90,74,Baja rotación,SIMULADO
+SIM135,Aceite Nutrioli 900 ml - Presentación familiar,Abarrotes,76.18,97.99,165,29,90,31,Exceso de inventario,SIMULADO
+SIM136,Aceite Nutrioli 900 ml - Paquete 3 pzas,Abarrotes,148.38,216.64,1,4,90,56,Baja rotación,SIMULADO
+SIM137,Sal Refinada La Fina 1 kg - Presentación chica,Abarrotes,18.84,28.01,524,1152,90,15,Normal,SIMULADO
+SIM138,Sal Refinada La Fina 1 kg - Paquete 3 pzas,Abarrotes,21.19,32.57,124,349,90,36,Baja rotación,SIMULADO
+SIM139,Sal Refinada La Fina 1 kg - Edición económica,Abarrotes,32.23,43.11,246,99,90,51,Exceso de inventario,SIMULADO
+SIM140,Atún Dolores en Agua 140 g - Paquete 6 pzas,Abarrotes,57.85,85.36,1,4,90,5,Baja rotación,SIMULADO
+SIM141,Atún Dolores en Agua 140 g - Paquete 3 pzas,Abarrotes,28.58,41.21,1,5,90,10,Baja rotación,SIMULADO
+SIM142,Atún Dolores en Agua 140 g - Edición económica,Abarrotes,26.53,36.18,570,1042,90,80,Baja rotación,SIMULADO
+SIM143,Sardina Calmex en Tomate 155 g - Presentación chica,Abarrotes,34.4,42.68,186,0,90,90,Normal,SIMULADO
+SIM144,Sardina Calmex en Tomate 155 g - Paquete 6 pzas,Abarrotes,70.31,94.3,1,6,90,69,Baja rotación,SIMULADO
+SIM145,Sardina Calmex en Tomate 155 g - Paquete 3 pzas,Abarrotes,67.87,107.6,160,402,90,49,Baja rotación,SIMULADO
+SIM146,Salsa Valentina 370 ml - Presentación familiar,Abarrotes,61.67,79.35,219,33,90,30,Exceso de inventario,SIMULADO
+SIM147,Salsa Valentina 370 ml - Edición económica,Abarrotes,26.68,33.23,44,91,90,0,Normal,SIMULADO
+SIM148,Salsa Valentina 370 ml - Paquete 6 pzas,Abarrotes,53.51,72.08,15,81,90,14,Exceso de inventario,SIMULADO
+SIM149,Mayonesa Helmans 390 g - Presentación familiar,Abarrotes,134.37,166.67,159,371,90,79,Baja rotación,SIMULADO
+SIM150,Mayonesa Helmans 390 g - Edición económica,Abarrotes,79.96,104.5,24,93,90,69,Baja rotación,SIMULADO
+SIM151,Mayonesa Helmans 390 g - Paquete 3 pzas,Abarrotes,64.72,101.34,37,369,90,21,Exceso de inventario,SIMULADO
+SIM152,Pasta Barilla Spaghetti 500 g - Presentación familiar,Abarrotes,89.83,119.25,43,99,90,47,Baja rotación,SIMULADO
+SIM153,Pasta Barilla Spaghetti 500 g - Edición económica,Abarrotes,85.2,122.21,2,21,90,51,Baja rotación,SIMULADO
+SIM154,Pasta Barilla Spaghetti 500 g - Paquete 3 pzas,Abarrotes,50.06,64.85,14,28,90,61,Baja rotación,SIMULADO
+SIM155,Sopa Maruchan Camarón 64 g - Paquete 6 pzas,Abarrotes,39.73,58.29,348,375,90,60,Baja rotación,SIMULADO
+SIM156,Sopa Maruchan Camarón 64 g - Presentación chica,Abarrotes,20.91,26.16,5,26,90,57,Baja rotación,SIMULADO
+SIM157,Sopa Maruchan Camarón 64 g - Presentación familiar,Abarrotes,28.4,43.05,32,104,90,36,Baja rotación,SIMULADO
+SIM158,Mole Doña María 160 g - Edición económica,Abarrotes,63.1,86.4,45,86,90,57,Baja rotación,SIMULADO
+SIM159,Mole Doña María 160 g - Paquete 6 pzas,Abarrotes,52.51,66.87,259,1088,90,81,Baja rotación,SIMULADO
+SIM160,Mole Doña María 160 g - Presentación chica,Abarrotes,92.79,139.49,2,4,90,11,Baja rotación,SIMULADO
+SIM161,Café Nescafé Clásico 100 g - Paquete 3 pzas,Abarrotes,267.85,380.81,2,30,90,70,Baja rotación,SIMULADO
+SIM162,Café Nescafé Clásico 100 g - Presentación familiar,Abarrotes,273.82,376.57,91,370,90,37,Baja rotación,SIMULADO
+SIM163,Café Nescafé Clásico 100 g - Presentación chica,Abarrotes,188.44,244.27,6,25,90,59,Baja rotación,SIMULADO
+SIM164,Leche Lala Entera 1 L - Paquete 6 pzas,Lácteos,80.38,121.58,142,2,90,43,Exceso de inventario,SIMULADO
+SIM165,Leche Lala Entera 1 L - Paquete 3 pzas,Lácteos,58.5,78.75,157,382,90,52,Baja rotación,SIMULADO
+SIM166,Leche Lala Entera 1 L - Edición económica,Lácteos,53.65,65.3,170,379,90,58,Baja rotación,SIMULADO
+SIM167,Leche Alpura Deslactosada 1 L - Paquete 6 pzas,Lácteos,50.43,79.99,171,19,90,71,Baja rotación,SIMULADO
+SIM168,Leche Alpura Deslactosada 1 L - Edición económica,Lácteos,43.15,52.31,3,0,90,90,Exceso de inventario,SIMULADO
+SIM169,Leche Alpura Deslactosada 1 L - Presentación chica,Lácteos,61.79,77.13,43,342,90,8,Normal,SIMULADO
+SIM170,Yoghurt Danone Fresa 125 g - Paquete 6 pzas,Lácteos,33.87,46.95,40,91,90,4,Normal,SIMULADO
+SIM171,Yoghurt Danone Fresa 125 g - Presentación chica,Lácteos,37.28,47.84,284,1013,90,79,Baja rotación,SIMULADO
+SIM172,Yoghurt Danone Fresa 125 g - Paquete 3 pzas,Lácteos,29.56,39.43,22,85,90,78,Normal,SIMULADO
+SIM173,Queso Oaxaca Lala 400 g - Paquete 3 pzas,Lácteos,118.76,169.47,207,21,90,29,Exceso de inventario,SIMULADO
+SIM174,Queso Oaxaca Lala 400 g - Paquete 6 pzas,Lácteos,226.9,359.21,2,4,90,83,Baja rotación,SIMULADO
+SIM175,Queso Oaxaca Lala 400 g - Presentación familiar,Lácteos,135.78,213.79,29,85,90,4,Normal,SIMULADO
+SIM176,Crema Lala para Batir 250 ml - Presentación familiar,Lácteos,94.02,115.6,305,328,90,75,Exceso de inventario,SIMULADO
+SIM177,Crema Lala para Batir 250 ml - Edición económica,Lácteos,92.11,141.97,2,3,90,32,Baja rotación,SIMULADO
+SIM178,Crema Lala para Batir 250 ml - Paquete 6 pzas,Lácteos,62.68,79.42,53,103,90,23,Normal,SIMULADO
+SIM179,Mantequilla Gloria 90 g - Presentación familiar,Lácteos,67.03,102.19,42,94,90,30,Normal,SIMULADO
+SIM180,Mantequilla Gloria 90 g - Presentación chica,Lácteos,37.78,49.81,373,336,90,71,Exceso de inventario,SIMULADO
+SIM181,Mantequilla Gloria 90 g - Paquete 3 pzas,Lácteos,48.64,72.33,3,22,90,89,Baja rotación,SIMULADO
+SIM182,Huevo Blanco San Juan 18 pzas - Presentación familiar,Lácteos,100.59,149.63,90,386,90,17,Normal,SIMULADO
+SIM183,Huevo Blanco San Juan 18 pzas - Edición económica,Lácteos,177.81,273.87,251,30,90,25,Exceso de inventario,SIMULADO
+SIM184,Huevo Blanco San Juan 18 pzas - Paquete 6 pzas,Lácteos,112.57,179.19,192,351,90,20,Normal,SIMULADO
+SIM185,Pan Bimbo Blanco Grande - Presentación chica,Panadería,97.56,127.82,42,356,90,30,Exceso de inventario,SIMULADO
+SIM186,Pan Bimbo Blanco Grande - Edición económica,Panadería,117.8,170.97,66,371,90,24,Normal,SIMULADO
+SIM187,Pan Bimbo Blanco Grande - Presentación familiar,Panadería,138.48,207.13,17,22,90,74,Baja rotación,SIMULADO
+SIM188,Pan Bimbo Integral - Paquete 6 pzas,Panadería,149.63,184.32,250,329,90,78,Baja rotación,SIMULADO
+SIM189,Pan Bimbo Integral - Paquete 3 pzas,Panadería,149.08,218.43,14,36,90,72,Baja rotación,SIMULADO
+SIM190,Pan Bimbo Integral - Edición económica,Panadería,81.81,108.69,28,90,90,82,Baja rotación,SIMULADO
+SIM191,Tortillas de Harina Mission 10 pzas - Paquete 3 pzas,Panadería,85.21,107.76,16,38,90,41,Baja rotación,SIMULADO
+SIM192,Tortillas de Harina Mission 10 pzas - Presentación familiar,Panadería,126.02,178.92,9,95,90,71,Baja rotación,SIMULADO
+SIM193,Tortillas de Harina Mission 10 pzas - Presentación chica,Panadería,121.13,167.74,2,4,90,78,Baja rotación,SIMULADO
+SIM194,Bolillo Pieza - Paquete 3 pzas,Panadería,10.63,15.21,687,1104,90,40,Baja rotación,SIMULADO
+SIM195,Bolillo Pieza - Presentación familiar,Panadería,6.53,9.51,269,6,90,1,Exceso de inventario,SIMULADO
+SIM196,Bolillo Pieza - Edición económica,Panadería,8.89,12.44,25,73,90,74,Baja rotación,SIMULADO
+SIM197,Marinela Gansito 2 pzas - Paquete 3 pzas,Panadería,38.86,60.7,233,365,90,65,Baja rotación,SIMULADO
+SIM198,Marinela Gansito 2 pzas - Edición económica,Panadería,54.02,68.67,2,3,90,79,Baja rotación,SIMULADO
+SIM199,Marinela Gansito 2 pzas - Presentación chica,Panadería,55.03,72.39,42,109,90,7,Normal,SIMULADO
+SIM200,Pastel Bimbo Chocolate - Presentación chica,Panadería,121.13,162.62,20,109,90,87,Baja rotación,SIMULADO
+SIM201,Pastel Bimbo Chocolate - Edición económica,Panadería,122.97,185.65,286,366,90,15,Normal,SIMULADO
+SIM202,Pastel Bimbo Chocolate - Paquete 6 pzas,Panadería,117.14,171.12,219,367,90,61,Baja rotación,SIMULADO
+SIM203,Detergente Ariel Polvo 1 kg - Paquete 6 pzas,Limpieza,113.49,145.56,442,354,90,86,Exceso de inventario,SIMULADO
+SIM204,Detergente Ariel Polvo 1 kg - Presentación chica,Limpieza,144.57,216.53,104,343,90,82,Baja rotación,SIMULADO
+SIM205,Detergente Ariel Polvo 1 kg - Edición económica,Limpieza,169.57,255.82,59,91,90,88,Baja rotación,SIMULADO
+SIM206,Cloro Cloralex 1 L - Presentación chica,Limpieza,27.56,41.56,133,24,90,84,Exceso de inventario,SIMULADO
+SIM207,Cloro Cloralex 1 L - Paquete 3 pzas,Limpieza,64.48,79.4,1,8,90,57,Baja rotación,SIMULADO
+SIM208,Cloro Cloralex 1 L - Presentación familiar,Limpieza,46.74,60.05,17,25,90,60,Baja rotación,SIMULADO
+SIM209,Suavitel Fresh 850 ml - Edición económica,Limpieza,72.38,112.78,307,371,90,40,Baja rotación,SIMULADO
+SIM210,Suavitel Fresh 850 ml - Paquete 3 pzas,Limpieza,98.14,152.29,3,25,90,37,Baja rotación,SIMULADO
+SIM211,Suavitel Fresh 850 ml - Paquete 6 pzas,Limpieza,129.47,166.01,143,332,90,78,Baja rotación,SIMULADO
+SIM212,Jabón Zote Rosa 400 g - Presentación familiar,Limpieza,46.75,66.41,18,26,90,36,Baja rotación,SIMULADO
+SIM213,Jabón Zote Rosa 400 g - Paquete 6 pzas,Limpieza,25.45,33.21,3,4,90,37,Baja rotación,SIMULADO
+SIM214,Jabón Zote Rosa 400 g - Edición económica,Limpieza,28.13,38.44,260,31,90,21,Exceso de inventario,SIMULADO
+SIM215,Fabuloso Lavanda 1 L - Edición económica,Limpieza,78.44,94.79,19,72,90,49,Baja rotación,SIMULADO
+SIM216,Fabuloso Lavanda 1 L - Presentación chica,Limpieza,72.45,95.11,1,2,90,84,Baja rotación,SIMULADO
+SIM217,Fabuloso Lavanda 1 L - Paquete 3 pzas,Limpieza,84.43,110.46,17,103,90,9,Normal,SIMULADO
+SIM218,Pinol Original 828 ml - Paquete 3 pzas,Limpieza,109.49,171.64,63,350,90,57,Baja rotación,SIMULADO
+SIM219,Pinol Original 828 ml - Edición económica,Limpieza,141.65,203.29,270,98,90,46,Exceso de inventario,SIMULADO
+SIM220,Pinol Original 828 ml - Presentación chica,Limpieza,119.69,152.13,48,90,90,64,Baja rotación,SIMULADO
+SIM221,Estropajo Scotch-Brite Pieza - Paquete 3 pzas,Limpieza,28.8,39.49,408,1102,90,12,Normal,SIMULADO
+SIM222,Estropajo Scotch-Brite Pieza - Presentación familiar,Limpieza,21.17,29.58,232,31,90,7,Exceso de inventario,SIMULADO
+SIM223,Estropajo Scotch-Brite Pieza - Edición económica,Limpieza,44.04,64.08,51,92,90,28,Normal,SIMULADO
+SIM224,Papel Higiénico Kleenex 4 rollos - Presentación chica,Higiene,93.56,132.2,348,1045,90,48,Baja rotación,SIMULADO
+SIM225,Papel Higiénico Kleenex 4 rollos - Edición económica,Higiene,61.55,84.22,13,87,90,22,Normal,SIMULADO
+SIM226,Papel Higiénico Kleenex 4 rollos - Presentación familiar,Higiene,85.64,113.41,39,90,90,51,Baja rotación,SIMULADO
+SIM227,Papel Higiénico Regio 12 rollos - Presentación chica,Higiene,264.81,378.68,8,88,90,65,Baja rotación,SIMULADO
+SIM228,Papel Higiénico Regio 12 rollos - Presentación familiar,Higiene,233.29,371.01,0,8,90,1,Normal,SIMULADO
+SIM229,Papel Higiénico Regio 12 rollos - Paquete 3 pzas,Higiene,261.84,372.13,192,374,90,58,Baja rotación,SIMULADO
+SIM230,Servilletas Kleenex 100 pzas - Presentación familiar,Higiene,59.64,92.73,263,1047,90,32,Baja rotación,SIMULADO
+SIM231,Servilletas Kleenex 100 pzas - Paquete 6 pzas,Higiene,48.72,58.76,469,1094,90,75,Baja rotación,SIMULADO
+SIM232,Servilletas Kleenex 100 pzas - Paquete 3 pzas,Higiene,68.65,87.96,30,100,90,84,Baja rotación,SIMULADO
+SIM233,Shampoo Head & Shoulders 400 ml - Paquete 3 pzas,Higiene,242.54,374.94,191,86,90,80,Exceso de inventario,SIMULADO
+SIM234,Shampoo Head & Shoulders 400 ml - Edición económica,Higiene,270.26,385.87,39,362,90,14,Normal,SIMULADO
+SIM235,Shampoo Head & Shoulders 400 ml - Presentación familiar,Higiene,124.94,174.29,710,1098,90,9,Normal,SIMULADO
+SIM236,Shampoo Sedal Keratina 340 ml - Presentación chica,Higiene,147.72,199.06,518,1072,90,72,Baja rotación,SIMULADO
+SIM237,Shampoo Sedal Keratina 340 ml - Paquete 6 pzas,Higiene,147.1,193.89,18,25,90,89,Baja rotación,SIMULADO
+SIM238,Shampoo Sedal Keratina 340 ml - Presentación familiar,Higiene,176.56,259.81,312,1071,90,23,Normal,SIMULADO
+SIM239,Pasta Dental Colgate 100 ml - Presentación chica,Higiene,108.39,145.92,320,350,90,76,Baja rotación,SIMULADO
+SIM240,Pasta Dental Colgate 100 ml - Presentación familiar,Higiene,118.35,162.62,46,326,90,52,Baja rotación,SIMULADO
+SIM241,Pasta Dental Colgate 100 ml - Paquete 3 pzas,Higiene,72.63,109.72,18,26,90,31,Baja rotación,SIMULADO
+SIM242,Desodorante Rexona Clinical 50 ml - Edición económica,Higiene,124.5,196.52,487,1101,90,5,Normal,SIMULADO
+SIM243,Desodorante Rexona Clinical 50 ml - Paquete 6 pzas,Higiene,127.99,204.46,75,348,90,51,Baja rotación,SIMULADO
+SIM244,Desodorante Rexona Clinical 50 ml - Presentación chica,Higiene,158.17,220.48,10,29,90,56,Baja rotación,SIMULADO
+SIM245,Rastrillos Bic 3 pzas - Edición económica,Higiene,99.11,124.41,54,87,90,6,Normal,SIMULADO
+SIM246,Rastrillos Bic 3 pzas - Presentación chica,Higiene,73.96,89.49,2,5,90,33,Baja rotación,SIMULADO
+SIM247,Rastrillos Bic 3 pzas - Paquete 3 pzas,Higiene,96.75,135.24,23,348,90,19,Normal,SIMULADO
+SIM248,Pañales Huggies Etapa 4 (20 pzas) - Edición económica,Higiene,600.53,738.98,23,81,90,9,Normal,SIMULADO
+SIM249,Pañales Huggies Etapa 4 (20 pzas) - Presentación familiar,Higiene,615.46,767.53,40,94,90,28,Normal,SIMULADO
+SIM250,Pañales Huggies Etapa 4 (20 pzas) - Paquete 6 pzas,Higiene,665.37,860.95,125,376,90,8,Normal,SIMULADO
+SIM251,Toallas Sanitarias Saba Ultra 10 pzas - Paquete 6 pzas,Higiene,122.15,195.05,67,406,90,45,Baja rotación,SIMULADO
+SIM252,Toallas Sanitarias Saba Ultra 10 pzas - Paquete 3 pzas,Higiene,121.24,153.36,1,6,90,73,Baja rotación,SIMULADO
+SIM253,Toallas Sanitarias Saba Ultra 10 pzas - Edición económica,Higiene,84.77,105.46,114,369,90,8,Exceso de inventario,SIMULADO
+SIM254,Pollo Entero Bachoco 1 kg - Paquete 3 pzas,Carnes,227.96,357.07,109,80,90,67,Exceso de inventario,SIMULADO
+SIM255,Pollo Entero Bachoco 1 kg - Presentación chica,Carnes,265.7,384.95,12,25,90,89,Baja rotación,SIMULADO
+SIM256,Pollo Entero Bachoco 1 kg - Edición económica,Carnes,144.25,215.79,186,21,90,16,Exceso de inventario,SIMULADO
+SIM257,Salchicha Fud Viena 250 g - Edición económica,Carnes,76.35,102.45,14,108,90,81,Baja rotación,SIMULADO
+SIM258,Salchicha Fud Viena 250 g - Presentación chica,Carnes,109.63,172.51,195,365,90,87,Baja rotación,SIMULADO
+SIM259,Salchicha Fud Viena 250 g - Paquete 6 pzas,Carnes,99.85,158.81,107,393,90,34,Baja rotación,SIMULADO
+SIM260,Jamón Fud Virginia 200 g - Paquete 6 pzas,Carnes,68.01,96.8,108,6,90,5,Exceso de inventario,SIMULADO
+SIM261,Jamón Fud Virginia 200 g - Presentación familiar,Carnes,75.92,121.07,37,83,90,74,Baja rotación,SIMULADO
+SIM262,Jamón Fud Virginia 200 g - Presentación chica,Carnes,66.67,93.49,59,329,90,4,Normal,SIMULADO
+SIM263,Chorizo Coronado Rojo 250 g - Presentación familiar,Carnes,181.83,250.18,22,89,90,45,Baja rotación,SIMULADO
+SIM264,Chorizo Coronado Rojo 250 g - Paquete 3 pzas,Carnes,85.91,130.08,465,361,90,29,Exceso de inventario,SIMULADO
+SIM265,Chorizo Coronado Rojo 250 g - Paquete 6 pzas,Carnes,98.18,143.12,29,78,90,21,Normal,SIMULADO
+SIM266,Plátano Tabasco kg - Presentación familiar,Frutas y verduras,58.52,74.92,17,24,90,41,Baja rotación,SIMULADO
+SIM267,Plátano Tabasco kg - Presentación chica,Frutas y verduras,33.16,46.62,20,83,90,49,Baja rotación,SIMULADO
+SIM268,Plátano Tabasco kg - Edición económica,Frutas y verduras,74.18,89.5,18,82,90,12,Normal,SIMULADO
+SIM269,Manzana Roja kg - Paquete 6 pzas,Frutas y verduras,144.28,223.67,138,377,90,12,Normal,SIMULADO
+SIM270,Manzana Roja kg - Presentación chica,Frutas y verduras,131.37,186.15,50,87,90,86,Baja rotación,SIMULADO
+SIM271,Manzana Roja kg - Paquete 3 pzas,Frutas y verduras,128.19,156.2,282,31,90,57,Exceso de inventario,SIMULADO
+SIM272,Jitomate Saladette kg - Presentación familiar,Frutas y verduras,51.92,81.78,72,364,90,64,Baja rotación,SIMULADO
+SIM273,Jitomate Saladette kg - Edición económica,Frutas y verduras,54.76,87.6,16,102,90,75,Baja rotación,SIMULADO
+SIM274,Jitomate Saladette kg - Presentación chica,Frutas y verduras,77.39,115.69,23,109,90,16,Normal,SIMULADO
+SIM275,Cebolla Blanca kg - Paquete 6 pzas,Frutas y verduras,51.85,71.17,325,1034,90,3,Normal,SIMULADO
+SIM276,Cebolla Blanca kg - Edición económica,Frutas y verduras,60.62,87.08,61,350,90,37,Baja rotación,SIMULADO
+SIM277,Cebolla Blanca kg - Presentación familiar,Frutas y verduras,34.03,40.98,59,375,90,7,Normal,SIMULADO
+SIM278,Aguacate Hass Pieza - Presentación chica,Frutas y verduras,29.08,36.16,550,1092,90,19,Normal,SIMULADO
+SIM279,Aguacate Hass Pieza - Edición económica,Frutas y verduras,58.51,77.96,212,380,90,23,Normal,SIMULADO
+SIM280,Aguacate Hass Pieza - Presentación familiar,Frutas y verduras,59.11,80.66,672,1103,90,12,Normal,SIMULADO
+SIM281,Limón Pieza - Paquete 3 pzas,Frutas y verduras,2.74,4.12,278,84,90,14,Baja rotación,SIMULADO
+SIM282,Limón Pieza - Presentación familiar,Frutas y verduras,4.96,6.29,7,103,90,84,Baja rotación,SIMULADO
+SIM283,Limón Pieza - Presentación chica,Frutas y verduras,2.72,3.39,127,29,90,8,Exceso de inventario,SIMULADO
+SIM284,Pilas Duracell AA 4 pzas - Paquete 6 pzas,Varios,90.8,134.29,4,29,90,23,Normal,SIMULADO
+SIM285,Pilas Duracell AA 4 pzas - Edición económica,Varios,193.55,301.01,28,84,90,67,Baja rotación,SIMULADO
+SIM286,Pilas Duracell AA 4 pzas - Paquete 3 pzas,Varios,155.03,240.59,1,8,90,18,Normal,SIMULADO
+SIM287,Velas Aromáticas Pieza - Presentación chica,Varios,26.91,40.28,2,27,90,21,Normal,SIMULADO
+SIM288,Velas Aromáticas Pieza - Edición económica,Varios,42.94,68.42,219,348,90,28,Normal,SIMULADO
+SIM289,Velas Aromáticas Pieza - Paquete 6 pzas,Varios,26.49,37.32,82,358,90,67,Baja rotación,SIMULADO
+SIM290,Bolsas de Plástico Asa Pieza - Presentación chica,Varios,2.69,4.06,2,2,90,79,Baja rotación,SIMULADO
+SIM291,Bolsas de Plástico Asa Pieza - Presentación familiar,Varios,1.84,2.52,6,26,90,26,Normal,SIMULADO
+SIM292,Bolsas de Plástico Asa Pieza - Paquete 3 pzas,Varios,1.89,2.54,37,80,90,74,Baja rotación,SIMULADO

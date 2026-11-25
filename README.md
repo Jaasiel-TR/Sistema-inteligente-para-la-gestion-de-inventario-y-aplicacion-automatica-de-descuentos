@@ -75,7 +75,7 @@ python -m unittest discover -s tests -v
 - El dataset de ejemplo es sintético. Para validar la exactitud técnica (criterio de 80%) hay que comparar contra conteo físico real.
 - El dataset público de Kaggle "Retail Store Inventory and Demand Forecasting" tiene otro esquema de columnas. Hay que renombrarlas o agregar un adaptador antes de usarlo.
 - Si una clase tiene menos de 2 registros, la partición estratificada fallará. Se requiere un volumen mínimo de datos.
-- El sistema recomienda descuentos; no los aplica automáticamente en el punto de venta.
+- El sistema recomienda descuentos; la tienda decide cuáles aplicar.
 
 ## Dataset de prueba simulado
 
@@ -83,15 +83,6 @@ python -m unittest discover -s tests -v
 
 Para regenerarlo: `python generar_supermercado_simulado.py`
 
-## Punto de venta
-
-La interfaz tiene dos secciones en la barra lateral: **Análisis** y **Punto de venta**.
-
-1. Sube el inventario (o usa el de ejemplo) y pulsa **Cargar inventario al punto de venta**. Esto crea la carpeta `punto_venta/` con el inventario, el modelo y un historial de ventas vacío. Ojo: reemplaza el inventario anterior y borra las ventas registradas.
-2. En **Punto de venta**, busca el producto, indica la cantidad y pulsa **Agregar al carrito**.
-3. Pulsa **Cobrar**. El sistema aplica el descuento recomendado vigente a cada producto, descuenta las existencias y guarda el ticket en `punto_venta/ventas.csv`.
-
-Las recomendaciones se recalculan con cada venta, porque el inventario cambia. Si un producto se agota, deja de recibir descuento. Si la venta excede la existencia, no se cobra y no se modifica nada.
 
 ## Gestión de inventario
 
@@ -111,3 +102,24 @@ Los descuentos recomendados se recalculan con los cambios al instante. El modelo
 - `inventario_supermercado_SIMULADO_extenso.csv`: 292 productos, incluye presentaciones extra (paquete, familiar, económica).
 
 Ambos son simulados (`origen = SIMULADO`). Para regenerar: `python generar_supermercado_simulado.py` o `python generar_supermercado_simulado.py --extenso`.
+
+
+## Descuentos
+
+La sección **Descuentos** separa la recomendación del descuento real que se cobra:
+
+- **Sugerido:** lo que calcula el modelo y las reglas (tope y margen). Se muestra en la tabla, pero no se cobra hasta aplicarlo.
+- **Aplicado:** el descuento que realmente se usa en los precios de venta. Se guarda en `punto_venta/descuentos.csv`.
+
+Formas de trabajar:
+
+- **Aplicar todas las sugerencias:** pone en vigor el descuento sugerido a todos los candidatos.
+- **Editar a mano:** cambia el porcentaje de cualquier producto en la tabla y pulsa **Guardar descuentos editados**. Pon 0 para quitar el descuento.
+
+Reglas para descuentos manuales:
+
+- Entre 0% y 60%.
+- El precio final nunca puede quedar por debajo del costo (`precio_compra`).
+- Si un producto se elimina o cambia de precio y su descuento deja de ser válido, el descuento se quita y queda registrado en la bitácora.
+
+Cada cambio de descuento se registra en la bitácora de movimientos.

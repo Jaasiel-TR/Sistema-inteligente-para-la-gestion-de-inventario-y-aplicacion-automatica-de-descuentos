@@ -1,35 +1,38 @@
 """
-Interfaz gráfica: análisis de inventario y punto de venta.
+Interfaz gráfica: análisis, descuentos e inventario.
 
 Ejecutar con:
   streamlit run app.py
 """
 import io
+import os
 
 import pandas as pd
 import streamlit as st
 
 from inventario import clasificacion, datos, descuentos, punto_venta
 
+BASE = os.path.dirname(os.path.abspath(__file__))
+C = os.path.join(BASE, punto_venta.CARPETA_DEFAULT)
+ARCHIVO_INICIAL = "inventario_supermercado_SIMULADO_extenso.csv"
+
 st.set_page_config(page_title="Inventario y descuentos", layout="wide")
 st.title("Gestión de inventario y descuentos automáticos")
 
 # ---------- Barra lateral ----------
 with st.sidebar:
-    seccion = st.radio("Sección", ["Análisis", "Punto de venta", "Inventario"])
+    seccion = st.radio("Sección", ["Análisis", "Descuentos", "Inventario"])
 
     st.header("Datos")
     archivo = st.file_uploader("Inventario (CSV o Excel)", type=["csv", "xlsx", "xls"])
     ruta_local = st.text_input(
         "O ruta de un archivo local",
-        placeholder="inventario_supermercado_SIMULADO_extenso.csv",
-        help="Ruta relativa a la carpeta desde donde corriste 'streamlit run app.py'.",
+        value=ARCHIVO_INICIAL,
+        help="Ruta relativa a la carpeta del proyecto, o ruta absoluta. Borra el texto para usar el dataset generado.",
     )
-    if archivo is None and not ruta_local.strip():
-        st.caption("Sin archivo: se usa un dataset de ejemplo generado.")
 
     st.header("Parámetros")
-    max_desc = st.slider("Tope máximo de descuento (%)", 5, 60, 30) / 100
+    max_desc = st.slider("Tope máximo de descuento sugerido (%)", 5, 60, 30) / 100
     margen = st.slider("Margen mínimo sobre costo (%)", 0, 50, 10) / 100
     semilla = st.number_input("Semilla aleatoria", value=42, step=1)
 
@@ -64,7 +67,8 @@ try:
         contenido, nombre = archivo.getvalue(), archivo.name
     elif ruta_local.strip():
         nombre = ruta_local.strip()
-        with open(nombre, "rb") as f:
+        ruta = nombre if os.path.isabs(nombre) else os.path.join(BASE, nombre)
+        with open(ruta, "rb") as f:
             contenido = f.read()
     else:
         contenido, nombre = None, "ejemplo.csv"
@@ -73,15 +77,19 @@ except Exception as e:
     st.error(f"No se pudo procesar el archivo: {e}")
     st.stop()
 
+# Al abrir la app, si todavía no hay inventario guardado, se carga el que está en uso
+if not punto_venta.esta_inicializado(C):
+    punto_venta.inicializar(df, modelo, C)
+
 with st.sidebar:
-    st.header("Punto de venta")
-    st.caption("Cargar este inventario reemplaza el inventario actual y borra las ventas registradas.")
-    if st.button("Cargar inventario al punto de venta"):
-        punto_venta.inicializar(df, modelo)
-        st.success("Inventario cargado en el punto de venta.")
+    st.header("Inventario en uso")
+    st.caption("Cargar este inventario reemplaza el actual y borra descuentos y bitácora.")
+    if st.button("Cargar este inventario"):
+        punto_venta.inicializar(df, modelo, C)
+        st.success("Inventario cargado.")
 
 
-# ---------- Sección: análisis ----------
+# ---------- Análisis ----------
 def pagina_analisis():
     st.subheader("1. Datos")
     st.write(f"Registros válidos: **{len(df)}**")
@@ -146,98 +154,99 @@ def pagina_analisis():
     )
 
 
-# ---------- Sección: punto de venta ----------
-def etiqueta_producto(fila):
-    txt = f"{fila['nombre']} — ${fila['precio_sugerido']:.2f}"
-    if fila["descuento_pct"] > 0:
-        txt += f" (desc. {fila['descuento_pct']:.0f}%)"
-    return txt + f" · stock {int(fila['existencia_actual'])}"
-
-
-def pagina_punto_venta():
+# ---------- Descuentos ----------
+def pagina_descuentos():
     if not punto_venta.esta_inicializado():
         st.info("Carga primero un inventario con el botón de la barra lateral.")
         return
 
-    if "carrito" not in st.session_state:
-        st.session_state.carrito = {}
-    if "mensaje_venta" in st.session_state:
-        st.success(st.session_state.pop("mensaje_venta"))
+    if "version_desc" not in st.session_state:
+        st.session_state.version_desc = 0
+    if "mensaje_desc" in st.session_state:
+        st.success(st.session_state.pop("mensaje_desc"))
 
-    recs = punto_venta.recomendaciones_actuales(punto_venta.CARPETA_DEFAULT, max_desc, margen)
-    rec_idx = recs.set_index("id_producto")
-    resumen = punto_venta.resumen_del_dia()
+    tabla = punto_venta.tabla_descuentos(C, max_desc, margen)
+    sugeridos = tabla[tabla["sugerido_pct"] > 0]
+    pendientes = sugeridos[(sugeridos["descuento_pct"] - sugeridos["sugerido_pct"]).abs() >= 0.05]
+    con_descuento = int((tabla["descuento_pct"] > 0).sum())
 
-    m1, m2, m3 = st.columns(3)
-    m1.metric("Ventas de hoy", f"${resumen['ventas']:,.2f}")
-    m2.metric("Tickets de hoy", resumen["tickets"])
-    m3.metric("Descuentos otorgados hoy", f"${resumen['descuentos']:,.2f}")
+    d1, d2, d3 = st.columns(3)
+    d1.metric("Productos con descuento", con_descuento)
+    d2.metric("Sugerencias por aplicar", len(pendientes))
+    d3.metric("Tope sugerido", f"{max_desc * 100:.0f}%")
 
-    col_prod, col_ticket = st.columns([3, 2])
-    carrito = st.session_state.carrito
+    st.caption(
+        "Las sugerencias son recomendaciones del modelo; no se cobran hasta aplicarlas. "
+        "Puedes aplicar todas de una vez o editar el porcentaje de cada producto en la tabla. "
+        "Pon 0 para quitar un descuento. El máximo manual es "
+        f"{punto_venta.LIMITE_DESCUENTO_MANUAL:.0f}% y el precio nunca puede quedar por debajo del costo."
+    )
 
-    with col_prod:
-        st.subheader("Productos")
-        buscar = st.text_input("Buscar producto")
-        mostrar = recs[recs["nombre"].str.contains(buscar, case=False, na=False)] if buscar else recs
-        if mostrar.empty:
-            st.info("Ningún producto coincide con la búsqueda.")
-        else:
-            pid = st.selectbox(
-                "Producto",
-                mostrar["id_producto"].tolist(),
-                format_func=lambda p: etiqueta_producto(rec_idx.loc[p]),
-            )
-            cantidad = st.number_input("Cantidad", min_value=1, value=1, step=1)
-            if st.button("Agregar al carrito"):
-                carrito[pid] = carrito.get(pid, 0) + int(cantidad)
-                st.rerun()
+    if st.button("Aplicar todas las sugerencias", type="primary", disabled=pendientes.empty):
+        n = punto_venta.aplicar_sugerencias(C, max_desc, margen)
+        st.session_state.mensaje_desc = f"Sugerencias aplicadas a {n} productos."
+        st.session_state.version_desc += 1
+        st.rerun()
 
-    with col_ticket:
-        st.subheader("Ticket actual")
-        if not carrito:
-            st.caption("Sin productos en el carrito.")
-        else:
-            filas = []
-            total = 0.0
-            for p, c in carrito.items():
-                r = rec_idx.loc[p]
-                importe = round(r["precio_sugerido"] * c, 2)
-                total += importe
-                filas.append({
-                    "Producto": r["nombre"],
-                    "Cant.": c,
-                    "Precio": f"${r['precio_sugerido']:.2f}",
-                    "Importe": f"${importe:.2f}",
-                })
-            st.dataframe(pd.DataFrame(filas), hide_index=True, width="stretch")
-            st.metric("Total", f"${total:,.2f}")
+    vista = tabla[[
+        "id_producto", "nombre", "categoria", "existencia_actual",
+        "precio_compra", "precio_venta", "etiqueta", "sugerido_pct",
+        "descuento_pct", "origen", "motivo",
+    ]].rename(columns={"descuento_pct": "descuento_aplicado_pct"})
+    original = vista.set_index("id_producto")["descuento_aplicado_pct"]
+    sugerido = vista.set_index("id_producto")["sugerido_pct"]
 
-            b1, b2 = st.columns(2)
-            if b1.button("Cobrar", type="primary"):
-                try:
-                    _, total_cobrado = punto_venta.registrar_venta(
-                        carrito, max_desc, margen, punto_venta.CARPETA_DEFAULT
-                    )
-                    st.session_state.carrito = {}
-                    st.session_state.mensaje_venta = f"Venta registrada por ${total_cobrado:,.2f}."
-                    st.rerun()
-                except ValueError as e:
-                    st.error(str(e))
-            if b2.button("Vaciar carrito"):
-                st.session_state.carrito = {}
-                st.rerun()
+    editado = st.data_editor(
+        vista,
+        hide_index=True,
+        width="stretch",
+        key=f"editor_desc_{st.session_state.version_desc}",
+        disabled=[c for c in vista.columns if c != "descuento_aplicado_pct"],
+        column_config={
+            "descuento_aplicado_pct": st.column_config.NumberColumn(
+                "Descuento aplicado (%)",
+                min_value=0.0,
+                max_value=punto_venta.LIMITE_DESCUENTO_MANUAL,
+                step=0.5,
+                format="%.1f",
+            ),
+            "sugerido_pct": st.column_config.NumberColumn("Sugerido (%)", format="%.1f"),
+        },
+    )
 
-    with st.expander("Historial de ventas de hoy"):
-        ventas = punto_venta.cargar_ventas(punto_venta.CARPETA_DEFAULT)
-        hoy = ventas[ventas["fecha"].str.startswith(pd.Timestamp.now().date().isoformat())] if len(ventas) else ventas
-        if hoy.empty:
-            st.caption("Todavía no hay ventas registradas hoy.")
-        else:
-            st.dataframe(hoy.iloc[::-1], hide_index=True, width="stretch")
+    if st.button("Guardar descuentos editados"):
+        guardados, errores = 0, []
+        for _, f in editado.iterrows():
+            pid = f["id_producto"]
+            nuevo = 0.0 if pd.isna(f["descuento_aplicado_pct"]) else float(f["descuento_aplicado_pct"])
+            if abs(nuevo - float(original[pid])) < 0.01:
+                continue
+            try:
+                punto_venta.guardar_descuento(C, pid, nuevo, sugerido_pct=float(sugerido[pid]))
+                guardados += 1
+            except ValueError as e:
+                errores.append(str(e))
+        for e in errores:
+            st.error(e)
+        if guardados:
+            st.session_state.mensaje_desc = f"Descuentos guardados: {guardados} productos."
+            st.session_state.version_desc += 1
+            st.rerun()
+        elif not errores:
+            st.info("No hay cambios que guardar.")
+
+    precios = punto_venta.tabla_precios(C)
+    con = precios[precios["descuento_pct"] > 0]
+    if len(con):
+        st.subheader("Precios con descuento vigente")
+        st.dataframe(
+            con[["nombre", "precio_venta", "descuento_pct", "precio_final", "origen"]]
+            .rename(columns={"descuento_pct": "descuento (%)", "precio_final": "precio final"}),
+            hide_index=True, width="stretch",
+        )
 
 
-# ---------- Sección: inventario ----------
+# ---------- Inventario ----------
 def pagina_inventario():
     if not punto_venta.esta_inicializado():
         st.info("Carga primero un inventario con el botón de la barra lateral.")
@@ -248,7 +257,7 @@ def pagina_inventario():
     if "mensaje_inv" in st.session_state:
         st.success(st.session_state.pop("mensaje_inv"))
 
-    inv = punto_venta.cargar_inventario(punto_venta.CARPETA_DEFAULT)
+    inv = punto_venta.cargar_inventario(C)
 
     st.subheader("Editar inventario")
     st.caption(
@@ -265,11 +274,10 @@ def pagina_inventario():
     )
     if st.button("Guardar cambios", type="primary"):
         try:
-            n = punto_venta.guardar_cambios(editado, punto_venta.CARPETA_DEFAULT)
+            n = punto_venta.guardar_cambios(editado, C)
             st.session_state.version_inv += 1
             st.session_state.mensaje_inv = (
-                f"Cambios guardados. Movimientos registrados: {n}."
-                if n else "No había cambios que guardar."
+                f"Cambios guardados. Movimientos registrados: {n}." if n else "No había cambios que guardar."
             )
             st.rerun()
         except ValueError as e:
@@ -278,20 +286,12 @@ def pagina_inventario():
     st.subheader("Entrada de mercancía")
     nombres = dict(zip(inv["id_producto"], inv["nombre"]))
     with st.form("entrada_mercancia", clear_on_submit=True):
-        pid = st.selectbox(
-            "Producto",
-            list(nombres.keys()),
-            format_func=lambda p: f"{nombres[p]} ({p})",
-        )
+        pid = st.selectbox("Producto", list(nombres.keys()), format_func=lambda p: f"{nombres[p]} ({p})")
         cantidad = st.number_input("Cantidad que entra", min_value=1, value=1, step=1)
-        costo = st.number_input(
-            "Costo unitario nuevo (0 = no cambiar)", min_value=0.0, value=0.0, step=0.5
-        )
+        costo = st.number_input("Costo unitario nuevo (0 = no cambiar)", min_value=0.0, value=0.0, step=0.5)
         if st.form_submit_button("Registrar entrada"):
             try:
-                punto_venta.registrar_entrada(
-                    pid, int(cantidad), costo if costo > 0 else None, punto_venta.CARPETA_DEFAULT
-                )
+                punto_venta.registrar_entrada(pid, int(cantidad), costo if costo > 0 else None, C)
                 st.session_state.version_inv += 1
                 st.session_state.mensaje_inv = f"Entrada registrada: +{int(cantidad)} de {nombres[pid]}."
                 st.rerun()
@@ -299,7 +299,7 @@ def pagina_inventario():
                 st.error(str(e))
 
     with st.expander("Bitácora de movimientos"):
-        mov = punto_venta.cargar_movimientos(punto_venta.CARPETA_DEFAULT)
+        mov = punto_venta.cargar_movimientos(C)
         if mov.empty:
             st.caption("Todavía no hay movimientos registrados.")
         else:
@@ -308,7 +308,7 @@ def pagina_inventario():
 
 if seccion == "Análisis":
     pagina_analisis()
-elif seccion == "Punto de venta":
-    pagina_punto_venta()
+elif seccion == "Descuentos":
+    pagina_descuentos()
 else:
     pagina_inventario()
